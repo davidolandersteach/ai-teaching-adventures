@@ -39,7 +39,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({
       </div>
 
       <div className="mt-8 space-y-4">
-        <h2 className="text-xl font-semibold text-gray-700">Section Moments</h2>
+        <h2 className="text-xl font-semibold text-gray-700">Delens moment</h2>
         
         {moments.map((moment) => (
           <div key={moment.id} className="bg-white rounded-lg shadow-sm border border-gray-200">
