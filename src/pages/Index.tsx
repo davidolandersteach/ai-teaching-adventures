@@ -20,7 +20,7 @@ const Index = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-education-700 to-education-900 text-white rounded-xl shadow-lg p-8 mb-8">
         <div className="max-w-3xl">
-          <h1 className="text-4xl font-bold mb-4">AI i skolan</h1>
+          <h1 className="text-4xl font-bold mb-4">AI i utbildning</h1>
           <p className="text-xl opacity-90 mb-6">
            klnnlknömm BLAKBMLMRGWW
           </p>
@@ -35,17 +35,16 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Course Overview */}
+      {/* Översikt */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Course Overview</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Översikt</h2>
         <p className="text-gray-600 mb-4">
-          This comprehensive course is designed specifically for educators who want to understand and implement AI technologies in their teaching practice. Through 8 sections with 4 focused moments each, you will gain both theoretical knowledge and practical skills.
-        </p>
+Metatext metatext        </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
             <GraduationCap className="h-8 w-8 text-education-600 mb-3" />
-            <h3 className="text-lg font-semibold mb-2">For Educators</h3>
+            <h3 className="text-lg font-semibold mb-2">För pedagoger</h3>
             <p className="text-gray-600">
               Designed specifically for teachers of all technical backgrounds.
             </p>
@@ -61,7 +60,7 @@ const Index = () => {
           
           <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
             <Users className="h-8 w-8 text-education-600 mb-3" />
-            <h3 className="text-lg font-semibold mb-2">Collaborative</h3>
+            <h3 className="text-lg font-semibold mb-2">Kolligialt samarbete</h3>
             <p className="text-gray-600">
               Share ideas and resources with other educators through embedded documents.
             </p>
