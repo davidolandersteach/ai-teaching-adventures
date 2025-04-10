@@ -36,7 +36,7 @@ const HeroSection = () => (
       {/* Image Container */}
       <div className="md:w-1/2 mt-6 md:mt-0">
         <img
-          src="src/Minecraft 1.png" // Replace with your image URL or import statement
+          src="/Minecraft 1.png" // Replace with your image URL or import statement
           alt="Illustration of AI in education"
           className="w-full h-auto rounded-lg object-cover"
           loading="lazy"
