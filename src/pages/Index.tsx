@@ -52,7 +52,7 @@ Metatext metatext        </p>
           
           <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
             <BookOpen className="h-8 w-8 text-education-600 mb-3" />
-            <h3 className="text-lg font-semibold mb-2">Structured Learning</h3>
+            <h3 className="text-lg font-semibold mb-2">Strukturerat lärande</h3>
             <p className="text-gray-600">
               32 moments organized into logical sections for optimal learning.
             </p>
@@ -70,7 +70,7 @@ Metatext metatext        </p>
 
       {/* Course Sections */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Course Sections</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Kursens delar</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {sectionData.map((section) => (
             <Link
