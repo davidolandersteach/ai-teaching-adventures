@@ -22,7 +22,7 @@ const HeroSection = () => (
       <div className="md:w-1/2">
         <h1 className="text-4xl font-bold mb-4">AI i utbildning</h1>
         <p className="text-xl opacity-90 mb-6">
-          Lär dig hur artificiell intelligens förändrar utbildningslandskapet och hur du kan använda dessa verktyg i din undervisning.
+          Lär dig hur artificiell intelligens förändrar utbildningslandskapet och hur du och dina elever kan använda AI på ett säkert sätt för att öka måluppfyllelsen.
         </p>
         <div className="flex gap-4 items-center">
           <Link
@@ -58,21 +58,21 @@ const OverviewSection = () => (
         <GraduationCap className="h-8 w-8 text-education-600 mb-3" />
         <h3 className="text-lg font-semibold mb-2">För pedagoger</h3>
         <p className="text-gray-600">
-          Designad för pedagoger utan krav på teknisk bakgrund.
+          Vetenskapligt grundad fortbildningsdesign anpassad för pedagoger utan krav på teknisk bakgrund.
         </p>
       </div>
       <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
         <BookOpen className="h-8 w-8 text-education-600 mb-3" />
         <h3 className="text-lg font-semibold mb-2">Strukturerat lärande</h3>
         <p className="text-gray-600">
-          32 moment organiserade i logiska avsnitt för optimal inlärning.
+          32 moment organiserade i 8 delar för logisk inlärning.
         </p>
       </div>
       <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
         <Users className="h-8 w-8 text-education-600 mb-3" />
         <h3 className="text-lg font-semibold mb-2">Kollegialt samarbete</h3>
         <p className="text-gray-600">
-          Dela idéer och resurser med andra pedagoger genom inbäddade dokument.
+          Reflektera tillsammans med kollegor för att nå djupare insikter.
         </p>
       </div>
     </div>
