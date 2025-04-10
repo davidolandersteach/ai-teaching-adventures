@@ -1,8 +1,110 @@
+
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CourseSection from "@/components/CourseSection";
 import EmbedYoutube from "@/components/EmbedYoutube";
 import EmbedGoogle from "@/components/EmbedGoogle";
+
+// Standardized moment templates for all sections
+const createStandardMoments = (sectionId: number) => [
+  {
+    id: 1,
+    title: "Moment A",
+    content: (
+      <div>
+        <p className="mb-4">
+          Här kommer en introduktion till detta moment. Denna text kommer att uppdateras med specifikt innehåll för varje sektion.
+        </p>
+        <h3 className="text-xl font-medium mb-2">Instruktioner</h3>
+        <p className="mb-4">
+          För att genomföra detta moment ska du:
+          <ol className="list-decimal pl-5 my-3">
+            <li>Läsa artikeln nedan</li>
+            <li>Titta på videon</li>
+            <li>Reflektera över innehållet</li>
+          </ol>
+        </p>
+        
+        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+          <h4 className="font-medium mb-2">Artikel</h4>
+          <p className="text-gray-600">Länk till artikel kommer att läggas in här.</p>
+        </div>
+        
+        <EmbedYoutube videoId="dQw4w9WgXcQ" title="Video för Sektion " + sectionId + ", Moment A" />
+        
+        <div className="mt-4 bg-education-50 p-4 rounded-lg border border-education-100">
+          <h4 className="font-medium text-education-800 mb-2">Lär dig mer</h4>
+          <ul className="list-disc pl-5 text-education-700">
+            <li>Ytterligare resurs 1</li>
+            <li>Ytterligare resurs 2</li>
+            <li>Ytterligare resurs 3</li>
+          </ul>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    title: "Moment B",
+    content: (
+      <div>
+        <h3 className="text-xl font-medium mb-3">Diskussionsfrågor utifrån Moment A</h3>
+        <ul className="list-disc pl-5 mb-6 text-gray-700">
+          <li>Diskussionsfråga 1</li>
+          <li>Diskussionsfråga 2</li>
+          <li>Diskussionsfråga 3</li>
+          <li>Diskussionsfråga 4</li>
+        </ul>
+        
+        <h3 className="text-xl font-medium mb-3">Förbered en aktivitet</h3>
+        <ul className="list-disc pl-5 mb-4 text-gray-700">
+          <li>Förberedelse 1</li>
+          <li>Förberedelse 2</li>
+          <li>Förberedelse 3</li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    title: "Moment C",
+    content: (
+      <div>
+        <h3 className="text-xl font-medium mb-3">Moment C – aktivitet</h3>
+        <p className="mb-4">Genomför den planerade aktiviteten.</p>
+      </div>
+    ),
+  },
+  {
+    id: 4,
+    title: "Moment D",
+    content: (
+      <div>
+        <h3 className="text-xl font-medium mb-3">Moment D – gemensam uppföljning</h3>
+        
+        <h4 className="text-lg font-medium mb-2 mt-4">Diskutera</h4>
+        <p className="mb-3">Diskutera era observationer utifrån anteckningarna som ni gjorde i "Moment C"</p>
+        
+        <h5 className="font-medium mb-2">Diskussionsfrågor</h5>
+        <ul className="list-disc pl-5 mb-6 text-gray-700">
+          <li>Diskussionsfråga 1</li>
+          <li>Diskussionsfråga 2</li>
+          <li>Diskussionsfråga 3</li>
+        </ul>
+        
+        <h4 className="text-lg font-medium mb-2">Reflektera</h4>
+        <p className="mb-3">Avsätt de sista tio minuterna för att reflektera över:</p>
+        
+        <ul className="list-disc pl-5 mb-4 text-gray-700">
+          <li>Vad gjorde jag/vi?</li>
+          <li>Vad lärde jag mig?</li>
+        </ul>
+        
+        <p className="italic mt-4">Sammanfatta tillsammans arbetet med denna del i några punkter.</p>
+      </div>
+    ),
+  },
+];
 
 // Sample content for the sections
 const sectionData = [
@@ -10,186 +112,49 @@ const sectionData = [
     id: 1,
     title: "Modul 1: Introduktion till AI – Vad är AI och hur fungerar det?",
     description: "Förstå de grundläggande koncepten inom AI och hur de tillämpas i utbildningssammanhang. Denna sektion ger en översikt över AI-teknologier och deras potentiella påverkan på undervisning och lärande.",
-    moments: [
-      {
-        id: 1,
-        title: "Moment A",
-        content: (
-          <div>
-            <p className="mb-4">
-              Artificiell Intelligens (AI) avser simulering av mänsklig intelligens i maskiner som är programmerade för att tänka och lära sig som människor. Den här modulen ger en översikt över AI-koncept som är relevanta för utbildning.
-            </p>
-            <h3 className="text-xl font-medium mb-2">Nyckelkoncept</h3>
-            <ul className="list-disc pl-5 mb-4">
-              <li>Maskininlärning: Hur datorer lär sig från data</li>
-              <li>Naturlig språkbehandling: Hur AI förstår mänskligt språk</li>
-              <li>Datorseende: Hur AI tolkar visuell information</li>
-              <li>AI-etik: Viktiga överväganden vid användning av AI</li>
-            </ul>
-            <EmbedYoutube videoId="5NgNicANyqM" title="Vad är AI inom utbildning?" />
-          </div>
-        ),
-      },
-      {
-        id: 2,
-        title: "Moment B",
-        content: (
-          <div>
-            <p className="mb-4">
-              Utbildningsteknologin har utvecklats betydligt genom decennierna, från enkla undervisningsmaskiner till sofistikerade AI-drivna inlärningssystem. Detta moment spårar den utvecklingen och placerar AI i sitt historiska sammanhang.
-            </p>
-            <h3 className="text-xl font-medium mb-2">Tidslinje</h3>
-            <ul className="timeline pl-5 mb-4">
-              <li className="mb-3">
-                <strong>1960-talet:</strong> Datorstödd undervisning
-              </li>
-              <li className="mb-3">
-                <strong>1980-talet:</strong> Persondatorer kommer in i klassrummen
-              </li>
-              <li className="mb-3">
-                <strong>2000-talet:</strong> Online-lärande och LMS-system
-              </li>
-              <li className="mb-3">
-                <strong>2010-talet:</strong> Adaptiva inlärningssystem
-              </li>
-              <li>
-                <strong>2020-talet:</strong> AI-driven personaliserad utbildning
-              </li>
-            </ul>
-            <EmbedGoogle 
-              type="slides" 
-              documentId="1VcwlEKmGtko8dDE8RYgzMz2Tff9uZ4dwIhtg0-DnIAA" 
-              title="Utvecklingen av EdTech" 
-            />
-          </div>
-        ),
-      },
-      {
-        id: 3,
-        title: "Moment C",
-        content: (
-          <div>
-            <p className="mb-4">
-              AI används redan på olika sätt inom utbildning. Detta moment utforskar aktuella tillämpningar och deras påverkan på undervisning och lärande.
-            </p>
-            <h3 className="text-xl font-medium mb-2">Aktuella tillämpningar</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div className="p-3 bg-gray-50 rounded-md">
-                <h4 className="font-medium">Personaliserat lärande</h4>
-                <p className="text-sm text-gray-600">Anpassning av innehåll efter elevernas behov</p>
-              </div>
-              <div className="p-3 bg-gray-50 rounded-md">
-                <h4 className="font-medium">Automatiserad bedömning</h4>
-                <p className="text-sm text-gray-600">Sparar lärartid vid bedömningar</p>
-              </div>
-              <div className="p-3 bg-gray-50 rounded-md">
-                <h4 className="font-medium">Läranalytik</h4>
-                <p className="text-sm text-gray-600">Insikter om elevers prestationer</p>
-              </div>
-              <div className="p-3 bg-gray-50 rounded-md">
-                <h4 className="font-medium">Administrativ automatisering</h4>
-                <p className="text-sm text-gray-600">Effektivisering av skolans verksamhet</p>
-              </div>
-            </div>
-            <EmbedYoutube videoId="y-gwXRd6zrA" title="AI-tillämpningar i dagens klassrum" />
-          </div>
-        ),
-      },
-      {
-        id: 4,
-        title: "Moment D",
-        content: (
-          <div>
-            <p className="mb-4">
-              När AI blir allt vanligare inom utbildning behöver lärare utveckla nya färdigheter och tankesätt. Detta moment hjälper pedagoger att förbereda sig för en AI-förstärkt undervisningsmiljö.
-            </p>
-            <h3 className="text-xl font-medium mb-2">Väsentliga färdigheter för lärare</h3>
-            <ul className="list-disc pl-5 mb-4">
-              <li>Digital kompetens och AI-medvetenhet</li>
-              <li>Kritisk utvärdering av AI-verktyg</li>
-              <li>Utformning av AI-förstärkta lektioner</li>
-              <li>Datatolkning och beslutsfattande</li>
-              <li>Balansering av AI-assistans med mänsklig touch</li>
-            </ul>
-            <EmbedGoogle 
-              type="doc" 
-              documentId="1w6OBTqisNYBVDZ-8LEzJUZeY3cJh1HbuDDVZzNgsFog" 
-              title="Lärarguide till AI-beredskap" 
-            />
-          </div>
-        ),
-      },
-    ],
+    moments: createStandardMoments(1),
   },
   {
     id: 2,
     title: "Modul 2: AI och pedagogik – Teori, forskning och evidens",
     description: "Utforska pedagogiska teorier och forskningsresultat kring användningen av AI i undervisning och lärande.",
-    moments: Array(4).fill(null).map((_, idx) => ({
-      id: idx + 1,
-      title: `Moment ${String.fromCharCode(65 + idx)}`,
-      content: <p>Innehåll för detta moment...</p>,
-    })),
+    moments: createStandardMoments(2),
   },
   {
     id: 3,
     title: "Modul 3: AI för lärare – Verktyg och strategier i praktiken",
     description: "Lär dig praktiska verktyg och strategier för att implementera AI i ditt klassrum och din undervisning.",
-    moments: Array(4).fill(null).map((_, idx) => ({
-      id: idx + 1,
-      title: `Moment ${String.fromCharCode(65 + idx)}`,
-      content: <p>Innehåll för detta moment...</p>,
-    })),
+    moments: createStandardMoments(3),
   },
   {
     id: 4,
     title: "Modul 4: Bedömning och AI",
     description: "Upptäck hur AI kan förändra bedömningsmetoder, göra dem mer effektiva, personliga och verkningsfulla.",
-    moments: Array(4).fill(null).map((_, idx) => ({
-      id: idx + 1,
-      title: `Moment ${String.fromCharCode(65 + idx)}`,
-      content: <p>Innehåll för detta moment...</p>,
-    })),
+    moments: createStandardMoments(4),
   },
   {
     id: 5,
     title: "Modul 5: Etik och ansvarsfull användning",
     description: "Utforska de etiska övervägandena vid användning av AI i utbildning och lär dig riktlinjer för ansvarsfull implementering.",
-    moments: Array(4).fill(null).map((_, idx) => ({
-      id: idx + 1,
-      title: `Moment ${String.fromCharCode(65 + idx)}`,
-      content: <p>Innehåll för detta moment...</p>,
-    })),
+    moments: createStandardMoments(5),
   },
   {
     id: 6,
     title: "Modul 6: Personaliserat lärande med AI",
     description: "Lär dig hur AI kan hjälpa till att skapa verkligt personaliserade lärandeupplevelser för elever med alla förmågor.",
-    moments: Array(4).fill(null).map((_, idx) => ({
-      id: idx + 1,
-      title: `Moment ${String.fromCharCode(65 + idx)}`,
-      content: <p>Innehåll för detta moment...</p>,
-    })),
+    moments: createStandardMoments(6),
   },
   {
     id: 7,
     title: "Modul 7: Framtiden för utbildning och AI",
     description: "Blicka framåt mot hur AI kan komma att förändra utbildningen under de kommande åren och hur lärare kan förbereda sig.",
-    moments: Array(4).fill(null).map((_, idx) => ({
-      id: idx + 1,
-      title: `Moment ${String.fromCharCode(65 + idx)}`,
-      content: <p>Innehåll för detta moment...</p>,
-    })),
+    moments: createStandardMoments(7),
   },
   {
     id: 8,
     title: "Modul 8: Praktisk implementering",
     description: "Sammanfatta allt med praktiska steg för att implementera AI i din specifika utbildningskontext.",
-    moments: Array(4).fill(null).map((_, idx) => ({
-      id: idx + 1,
-      title: `Moment ${String.fromCharCode(65 + idx)}`,
-      content: <p>Innehåll för detta moment...</p>,
-    })),
+    moments: createStandardMoments(8),
   },
 ];
 
