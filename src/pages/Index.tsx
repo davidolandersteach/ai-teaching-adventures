@@ -5,9 +5,9 @@ import { ArrowRight, BookOpen, GraduationCap, Users } from "lucide-react";
 
 const Index = () => {
   const sectionData = [
-    { id: 1, title: "Modul 1: Introduktion till AI i utbildning" },
-    { id: 2, title: "Modul 2: AI-verktyg för lärare" },
-    { id: 3, title: "Modul 3: Strategier för klassrumsintegration" },
+    { id: 1, title: "Modul 1: Introduktion till AI – Vad är AI och hur fungerar det?" },
+    { id: 2, title: "Modul 2: AI och pedagogik – Teori, forskning och evidens" },
+    { id: 3, title: "Modul 3: AI för lärare – Verktyg och strategier i praktiken" },
     { id: 4, title: "Modul 4: Bedömning och AI" },
     { id: 5, title: "Modul 5: Etik och ansvarsfull användning" },
     { id: 6, title: "Modul 6: Personaliserat lärande med AI" },

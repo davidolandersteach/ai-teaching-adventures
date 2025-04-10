@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CourseSection from "@/components/CourseSection";
@@ -122,41 +121,20 @@ const sectionData = [
       },
     ],
   },
-  // Other sections would be defined similarly with their own moments
-  // For brevity, we'll just define the first section fully and provide 
-  // placeholders for the rest
   {
     id: 2,
-    title: "Modul 2: AI-verktyg för lärare",
-    description: "Utforska praktiska AI-verktyg som lärare kan använda för att förbättra undervisning, spara tid och förbättra elevresultat.",
-    moments: [
-      {
-        id: 1,
-        title: "Moment A",
-        content: <p>Innehåll om AI-verktyg för att skapa utbildningsmaterial...</p>,
-      },
-      {
-        id: 2,
-        title: "Moment B",
-        content: <p>Innehåll om AI-drivna bedömningsverktyg...</p>,
-      },
-      {
-        id: 3,
-        title: "Moment C",
-        content: <p>Innehåll om AI för klassrumshantering...</p>,
-      },
-      {
-        id: 4,
-        title: "Moment D",
-        content: <p>Innehåll om AI-verktyg som förbättrar tillgänglighet...</p>,
-      },
-    ],
+    title: "Modul 2: AI och pedagogik – Teori, forskning och evidens",
+    description: "Utforska pedagogiska teorier och forskningsresultat kring användningen av AI i undervisning och lärande.",
+    moments: Array(4).fill(null).map((_, idx) => ({
+      id: idx + 1,
+      title: `Moment ${String.fromCharCode(65 + idx)}`,
+      content: <p>Innehåll för detta moment...</p>,
+    })),
   },
-  // Placeholder data for the remaining sections
   {
     id: 3,
-    title: "Modul 3: Strategier för klassrumsintegration",
-    description: "Lär dig effektiva metoder för att integrera AI-verktyg och tekniker i dina dagliga klassrumsaktiviteter.",
+    title: "Modul 3: AI för lärare – Verktyg och strategier i praktiken",
+    description: "Lär dig praktiska verktyg och strategier för att implementera AI i ditt klassrum och din undervisning.",
     moments: Array(4).fill(null).map((_, idx) => ({
       id: idx + 1,
       title: `Moment ${String.fromCharCode(65 + idx)}`,
