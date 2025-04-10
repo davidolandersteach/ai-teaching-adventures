@@ -29,7 +29,7 @@ const Index = () => {
               to="/section/1"
               className="bg-white text-education-800 hover:bg-gray-100 px-4 py-2 rounded-md font-medium inline-flex items-center gap-2 transition-colors"
             >
-              Start Learning <ArrowRight className="h-4 w-4" />
+              Påbörja lärandet <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -46,7 +46,7 @@ Metatext metatext        </p>
             <GraduationCap className="h-8 w-8 text-education-600 mb-3" />
             <h3 className="text-lg font-semibold mb-2">För pedagoger</h3>
             <p className="text-gray-600">
-              Designed specifically for teachers of all technical backgrounds.
+              Designad för pedagoger utan krav på teknisk bakgrund.
             </p>
           </div>
           
@@ -60,7 +60,7 @@ Metatext metatext        </p>
           
           <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
             <Users className="h-8 w-8 text-education-600 mb-3" />
-            <h3 className="text-lg font-semibold mb-2">Kolligialt samarbete</h3>
+            <h3 className="text-lg font-semibold mb-2">Kollegialt samarbete</h3>
             <p className="text-gray-600">
               Share ideas and resources with other educators through embedded documents.
             </p>
