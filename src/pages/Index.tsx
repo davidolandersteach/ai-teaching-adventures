@@ -10,7 +10,7 @@ const Index = () => {
     { id: 3, title: "AI för lärare – Verktyg och strategier i praktiken" },
     { id: 4, title: "Bedömning" },
     { id: 5, title: "Etik och ansvarsfull användning" },
-    { id: 6, title: "Individualiserat lärande" },
+    { id: 6, title: "Differentierat lärande" },
     { id: 7, title: "Implementering av AI i klassrummet" },
     { id: 8, title: "Utvärdering, reflektion och framtid" },
   ];
