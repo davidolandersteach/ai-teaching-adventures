@@ -20,7 +20,7 @@ const Index = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-education-700 to-education-900 text-white rounded-xl shadow-lg p-8 mb-8">
         <div className="max-w-3xl">
-          <h1 className="text-4xl font-bold mb-4">AI for Teachers</h1>
+          <h1 className="text-4xl font-bold mb-4">AI i skolan</h1>
           <p className="text-xl opacity-90 mb-6">
             Empower your teaching with the latest in artificial intelligence. Learn how AI can transform your classroom and enhance student learning experiences.
           </p>
