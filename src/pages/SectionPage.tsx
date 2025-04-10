@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CourseSection from "@/components/CourseSection";
@@ -8,113 +9,113 @@ import EmbedGoogle from "@/components/EmbedGoogle";
 const sectionData = [
   {
     id: 1,
-    title: Modul 1: Introduktion till AI – Vad är AI och hur fungerar det?",
-    description: "Understand the foundational concepts of AI and how they apply to educational contexts. This section provides an overview of AI technologies and their potential impact on teaching and learning.",
+    title: "Modul 1: Introduktion till AI – Vad är AI och hur fungerar det?",
+    description: "Förstå de grundläggande koncepten inom AI och hur de tillämpas i utbildningssammanhang. Denna sektion ger en översikt över AI-teknologier och deras potentiella påverkan på undervisning och lärande.",
     moments: [
       {
         id: 1,
-        title: "Understanding AI Fundamentals",
+        title: "Moment A",
         content: (
           <div>
             <p className="mb-4">
-              Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think and learn like humans. This module provides an overview of AI concepts that are relevant to education.
+              Artificiell Intelligens (AI) avser simulering av mänsklig intelligens i maskiner som är programmerade för att tänka och lära sig som människor. Den här modulen ger en översikt över AI-koncept som är relevanta för utbildning.
             </p>
-            <h3 className="text-xl font-medium mb-2">Key Concepts</h3>
+            <h3 className="text-xl font-medium mb-2">Nyckelkoncept</h3>
             <ul className="list-disc pl-5 mb-4">
-              <li>Machine Learning: How computers learn from data</li>
-              <li>Natural Language Processing: How AI understands human language</li>
-              <li>Computer Vision: How AI interprets visual information</li>
-              <li>AI Ethics: Important considerations when using AI</li>
+              <li>Maskininlärning: Hur datorer lär sig från data</li>
+              <li>Naturlig språkbehandling: Hur AI förstår mänskligt språk</li>
+              <li>Datorseende: Hur AI tolkar visuell information</li>
+              <li>AI-etik: Viktiga överväganden vid användning av AI</li>
             </ul>
-            <EmbedYoutube videoId="5NgNicANyqM" title="What is AI in Education?" />
+            <EmbedYoutube videoId="5NgNicANyqM" title="Vad är AI inom utbildning?" />
           </div>
         ),
       },
       {
         id: 2,
-        title: "Modul 2: AI och pedagogik – Teori, forskning och evidens",
+        title: "Moment B",
         content: (
           <div>
             <p className="mb-4">
-              Educational technology has evolved significantly over the decades, from simple teaching machines to sophisticated AI-powered learning systems. This moment traces that evolution and places AI in its historical context.
+              Utbildningsteknologin har utvecklats betydligt genom decennierna, från enkla undervisningsmaskiner till sofistikerade AI-drivna inlärningssystem. Detta moment spårar den utvecklingen och placerar AI i sitt historiska sammanhang.
             </p>
-            <h3 className="text-xl font-medium mb-2">Timeline</h3>
+            <h3 className="text-xl font-medium mb-2">Tidslinje</h3>
             <ul className="timeline pl-5 mb-4">
               <li className="mb-3">
-                <strong>1960s:</strong> Computer-Assisted Instruction
+                <strong>1960-talet:</strong> Datorstödd undervisning
               </li>
               <li className="mb-3">
-                <strong>1980s:</strong> Personal computers enter classrooms
+                <strong>1980-talet:</strong> Persondatorer kommer in i klassrummen
               </li>
               <li className="mb-3">
-                <strong>2000s:</strong> Online learning and LMS systems
+                <strong>2000-talet:</strong> Online-lärande och LMS-system
               </li>
               <li className="mb-3">
-                <strong>2010s:</strong> Adaptive learning systems
+                <strong>2010-talet:</strong> Adaptiva inlärningssystem
               </li>
               <li>
-                <strong>2020s:</strong> AI-powered personalized education
+                <strong>2020-talet:</strong> AI-driven personaliserad utbildning
               </li>
             </ul>
             <EmbedGoogle 
               type="slides" 
               documentId="1VcwlEKmGtko8dDE8RYgzMz2Tff9uZ4dwIhtg0-DnIAA" 
-              title="The Evolution of EdTech"
+              title="Utvecklingen av EdTech" 
             />
           </div>
         ),
       },
       {
         id: 3,
-        title: "Modul 3: AI för lärare – Verktyg och strategier i praktiken",
+        title: "Moment C",
         content: (
           <div>
             <p className="mb-4">
-              AI is already being used in various ways in education. This moment explores current applications and their impact on teaching and learning.
+              AI används redan på olika sätt inom utbildning. Detta moment utforskar aktuella tillämpningar och deras påverkan på undervisning och lärande.
             </p>
-            <h3 className="text-xl font-medium mb-2">Current Applications</h3>
+            <h3 className="text-xl font-medium mb-2">Aktuella tillämpningar</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="p-3 bg-gray-50 rounded-md">
-                <h4 className="font-medium">Personalized Learning</h4>
-                <p className="text-sm text-gray-600">Adapting content to student needs</p>
+                <h4 className="font-medium">Personaliserat lärande</h4>
+                <p className="text-sm text-gray-600">Anpassning av innehåll efter elevernas behov</p>
               </div>
               <div className="p-3 bg-gray-50 rounded-md">
-                <h4 className="font-medium">Automated Grading</h4>
-                <p className="text-sm text-gray-600">Saving teacher time on assessments</p>
+                <h4 className="font-medium">Automatiserad bedömning</h4>
+                <p className="text-sm text-gray-600">Sparar lärartid vid bedömningar</p>
               </div>
               <div className="p-3 bg-gray-50 rounded-md">
-                <h4 className="font-medium">Learning Analytics</h4>
-                <p className="text-sm text-gray-600">Insights into student performance</p>
+                <h4 className="font-medium">Läranalytik</h4>
+                <p className="text-sm text-gray-600">Insikter om elevers prestationer</p>
               </div>
               <div className="p-3 bg-gray-50 rounded-md">
-                <h4 className="font-medium">Administrative Automation</h4>
-                <p className="text-sm text-gray-600">Streamlining school operations</p>
+                <h4 className="font-medium">Administrativ automatisering</h4>
+                <p className="text-sm text-gray-600">Effektivisering av skolans verksamhet</p>
               </div>
             </div>
-            <EmbedYoutube videoId="y-gwXRd6zrA" title="AI Applications in Today's Classroom" />
+            <EmbedYoutube videoId="y-gwXRd6zrA" title="AI-tillämpningar i dagens klassrum" />
           </div>
         ),
       },
       {
         id: 4,
-        title: "Preparing for AI-Enhanced Teaching",
+        title: "Moment D",
         content: (
           <div>
             <p className="mb-4">
-              As AI becomes more prevalent in education, teachers need to develop new skills and mindsets. This moment helps educators prepare for an AI-enhanced teaching environment.
+              När AI blir allt vanligare inom utbildning behöver lärare utveckla nya färdigheter och tankesätt. Detta moment hjälper pedagoger att förbereda sig för en AI-förstärkt undervisningsmiljö.
             </p>
-            <h3 className="text-xl font-medium mb-2">Essential Skills for Teachers</h3>
+            <h3 className="text-xl font-medium mb-2">Väsentliga färdigheter för lärare</h3>
             <ul className="list-disc pl-5 mb-4">
-              <li>Digital literacy and AI awareness</li>
-              <li>Critical evaluation of AI tools</li>
-              <li>Designing AI-enhanced lessons</li>
-              <li>Data interpretation and decision-making</li>
-              <li>Balancing AI assistance with human touch</li>
+              <li>Digital kompetens och AI-medvetenhet</li>
+              <li>Kritisk utvärdering av AI-verktyg</li>
+              <li>Utformning av AI-förstärkta lektioner</li>
+              <li>Datatolkning och beslutsfattande</li>
+              <li>Balansering av AI-assistans med mänsklig touch</li>
             </ul>
             <EmbedGoogle 
               type="doc" 
               documentId="1w6OBTqisNYBVDZ-8LEzJUZeY3cJh1HbuDDVZzNgsFog" 
-              title="Teacher's Guide to AI Readiness"
+              title="Lärarguide till AI-beredskap" 
             />
           </div>
         ),
@@ -126,90 +127,90 @@ const sectionData = [
   // placeholders for the rest
   {
     id: 2,
-    title: "AI Tools for Teachers",
-    description: "Explore practical AI tools that teachers can use to enhance instruction, save time, and improve student outcomes.",
+    title: "Modul 2: AI-verktyg för lärare",
+    description: "Utforska praktiska AI-verktyg som lärare kan använda för att förbättra undervisning, spara tid och förbättra elevresultat.",
     moments: [
       {
         id: 1,
-        title: "Content Creation Tools",
-        content: <p>Content about AI tools for creating educational materials...</p>,
+        title: "Moment A",
+        content: <p>Innehåll om AI-verktyg för att skapa utbildningsmaterial...</p>,
       },
       {
         id: 2,
-        title: "Assessment and Feedback Tools",
-        content: <p>Content about AI-powered assessment tools...</p>,
+        title: "Moment B",
+        content: <p>Innehåll om AI-drivna bedömningsverktyg...</p>,
       },
       {
         id: 3,
-        title: "Classroom Management AI",
-        content: <p>Content about AI for classroom management...</p>,
+        title: "Moment C",
+        content: <p>Innehåll om AI för klassrumshantering...</p>,
       },
       {
         id: 4,
-        title: "Accessibility and Inclusion Tools",
-        content: <p>Content about AI tools that enhance accessibility...</p>,
+        title: "Moment D",
+        content: <p>Innehåll om AI-verktyg som förbättrar tillgänglighet...</p>,
       },
     ],
   },
   // Placeholder data for the remaining sections
   {
     id: 3,
-    title: "Classroom Integration Strategies",
-    description: "Learn effective methods for integrating AI tools and techniques into your daily classroom activities.",
+    title: "Modul 3: Strategier för klassrumsintegration",
+    description: "Lär dig effektiva metoder för att integrera AI-verktyg och tekniker i dina dagliga klassrumsaktiviteter.",
     moments: Array(4).fill(null).map((_, idx) => ({
       id: idx + 1,
-      title: `Strategy ${idx + 1}`,
-      content: <p>Content for this moment...</p>,
+      title: `Moment ${String.fromCharCode(65 + idx)}`,
+      content: <p>Innehåll för detta moment...</p>,
     })),
   },
   {
     id: 4,
-    title: "Assessment and AI",
-    description: "Discover how AI can transform assessment practices, making them more efficient, personalized, and effective.",
+    title: "Modul 4: Bedömning och AI",
+    description: "Upptäck hur AI kan förändra bedömningsmetoder, göra dem mer effektiva, personliga och verkningsfulla.",
     moments: Array(4).fill(null).map((_, idx) => ({
       id: idx + 1,
-      title: `Assessment Topic ${idx + 1}`,
-      content: <p>Content for this moment...</p>,
+      title: `Moment ${String.fromCharCode(65 + idx)}`,
+      content: <p>Innehåll för detta moment...</p>,
     })),
   },
   {
     id: 5,
-    title: "Ethics and Responsible Use",
-    description: "Explore the ethical considerations of using AI in education and learn guidelines for responsible implementation.",
+    title: "Modul 5: Etik och ansvarsfull användning",
+    description: "Utforska de etiska övervägandena vid användning av AI i utbildning och lär dig riktlinjer för ansvarsfull implementering.",
     moments: Array(4).fill(null).map((_, idx) => ({
       id: idx + 1,
-      title: `Ethics Topic ${idx + 1}`,
-      content: <p>Content for this moment...</p>,
+      title: `Moment ${String.fromCharCode(65 + idx)}`,
+      content: <p>Innehåll för detta moment...</p>,
     })),
   },
   {
     id: 6,
-    title: "Personalized Learning with AI",
-    description: "Learn how AI can help create truly personalized learning experiences for students of all abilities.",
+    title: "Modul 6: Personaliserat lärande med AI",
+    description: "Lär dig hur AI kan hjälpa till att skapa verkligt personaliserade lärandeupplevelser för elever med alla förmågor.",
     moments: Array(4).fill(null).map((_, idx) => ({
       id: idx + 1,
-      title: `Personalization Topic ${idx + 1}`,
-      content: <p>Content for this moment...</p>,
+      title: `Moment ${String.fromCharCode(65 + idx)}`,
+      content: <p>Innehåll för detta moment...</p>,
     })),
   },
   {
     id: 7,
-    title: "Future of Education and AI",
-    description: "Look ahead to how AI might transform education in the coming years and how teachers can prepare.",
+    title: "Modul 7: Framtiden för utbildning och AI",
+    description: "Blicka framåt mot hur AI kan komma att förändra utbildningen under de kommande åren och hur lärare kan förbereda sig.",
     moments: Array(4).fill(null).map((_, idx) => ({
       id: idx + 1,
-      title: `Future Topic ${idx + 1}`,
-      content: <p>Content for this moment...</p>,
+      title: `Moment ${String.fromCharCode(65 + idx)}`,
+      content: <p>Innehåll för detta moment...</p>,
     })),
   },
   {
     id: 8,
-    title: "Practical Implementation",
-    description: "Bring it all together with practical steps for implementing AI in your specific educational context.",
+    title: "Modul 8: Praktisk implementering",
+    description: "Sammanfatta allt med praktiska steg för att implementera AI i din specifika utbildningskontext.",
     moments: Array(4).fill(null).map((_, idx) => ({
       id: idx + 1,
-      title: `Implementation Step ${idx + 1}`,
-      content: <p>Content for this moment...</p>,
+      title: `Moment ${String.fromCharCode(65 + idx)}`,
+      content: <p>Innehåll för detta moment...</p>,
     })),
   },
 ];

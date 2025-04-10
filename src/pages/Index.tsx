@@ -5,14 +5,14 @@ import { ArrowRight, BookOpen, GraduationCap, Users } from "lucide-react";
 
 const Index = () => {
   const sectionData = [
-    { id: 1, title: "Introduction to AI in Education" },
-    { id: 2, title: "AI Tools for Teachers" },
-    { id: 3, title: "Classroom Integration Strategies" },
-    { id: 4, title: "Assessment and AI" },
-    { id: 5, title: "Ethics and Responsible Use" },
-    { id: 6, title: "Personalized Learning with AI" },
-    { id: 7, title: "Future of Education and AI" },
-    { id: 8, title: "Practical Implementation" },
+    { id: 1, title: "Modul 1: Introduktion till AI i utbildning" },
+    { id: 2, title: "Modul 2: AI-verktyg för lärare" },
+    { id: 3, title: "Modul 3: Strategier för klassrumsintegration" },
+    { id: 4, title: "Modul 4: Bedömning och AI" },
+    { id: 5, title: "Modul 5: Etik och ansvarsfull användning" },
+    { id: 6, title: "Modul 6: Personaliserat lärande med AI" },
+    { id: 7, title: "Modul 7: Framtiden för utbildning och AI" },
+    { id: 8, title: "Modul 8: Praktisk implementering" },
   ];
 
   return (
@@ -22,7 +22,7 @@ const Index = () => {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-bold mb-4">AI i utbildning</h1>
           <p className="text-xl opacity-90 mb-6">
-           klnnlknömm BLAKBMLMRGWW
+            Lär dig hur artificiell intelligens förändrar utbildningslandskapet och hur du kan använda dessa verktyg i din undervisning.
           </p>
           <div className="flex gap-4 items-center">
             <Link
@@ -39,7 +39,8 @@ const Index = () => {
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Översikt</h2>
         <p className="text-gray-600 mb-4">
-Metatext metatext        </p>
+          Denna kurs om AI i utbildning är utformad för att ge dig kunskaper och praktiska färdigheter för att integrera AI-verktyg och metoder i din undervisning.
+        </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
@@ -54,7 +55,7 @@ Metatext metatext        </p>
             <BookOpen className="h-8 w-8 text-education-600 mb-3" />
             <h3 className="text-lg font-semibold mb-2">Strukturerat lärande</h3>
             <p className="text-gray-600">
-              32 moments organized into logical sections for optimal learning.
+              32 moment organiserade i logiska avsnitt för optimal inlärning.
             </p>
           </div>
           
@@ -62,7 +63,7 @@ Metatext metatext        </p>
             <Users className="h-8 w-8 text-education-600 mb-3" />
             <h3 className="text-lg font-semibold mb-2">Kollegialt samarbete</h3>
             <p className="text-gray-600">
-              Share ideas and resources with other educators through embedded documents.
+              Dela idéer och resurser med andra pedagoger genom inbäddade dokument.
             </p>
           </div>
         </div>
