@@ -152,7 +152,7 @@ const sectionData = [
   },
   {
     id: 8,
-    title: "Utvärdering, reflektion och framtid",
+    title: "AI för bedömning",
     description: "Sammanfatta allt med praktiska steg för att implementera AI i din specifika utbildningskontext.",
     moments: createStandardMoments(8),
   },
