@@ -18,19 +18,19 @@ const createStandardMoments = (sectionId: number) => [
         <h3 className="text-xl font-medium mb-2">Instruktioner</h3>
         <p className="mb-4">
           För att genomföra detta moment ska du:
-          <ol className="list-decimal pl-5 my-3">
-            <li>Läsa artikeln nedan</li>
-            <li>Titta på videon</li>
-            <li>Reflektera över innehållet</li>
-          </ol>
         </p>
+        <ol className="list-decimal pl-5 my-3">
+          <li>Läsa artikeln nedan</li>
+          <li>Titta på videon</li>
+          <li>Reflektera över innehållet</li>
+        </ol>
         
         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
           <h4 className="font-medium mb-2">Artikel</h4>
           <p className="text-gray-600">Länk till artikel kommer att läggas in här.</p>
         </div>
         
-        <EmbedYoutube videoId="dQw4w9WgXcQ" title="Video för Sektion " + sectionId + ", Moment A" />
+        <EmbedYoutube videoId="dQw4w9WgXcQ" title={"Video för Sektion " + sectionId + ", Moment A"} />
         
         <div className="mt-4 bg-education-50 p-4 rounded-lg border border-education-100">
           <h4 className="font-medium text-education-800 mb-2">Lär dig mer</h4>
