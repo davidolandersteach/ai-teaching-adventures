@@ -10,7 +10,7 @@ const sectionData = [
   { id: 4, title: "Bedömning" },
   { id: 5, title: "Etik och ansvarsfull användning" },
   { id: 6, title: "Differentierat lärande" },
-  { id: 7, title: "Implementering av AI i klassrummet" },
+  { id: 7, title: "AI och källkritik" },
   { id: 8, title: "Utvärdering, reflektion och framtid" },
 ];
 
