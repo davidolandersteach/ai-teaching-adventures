@@ -30,7 +30,7 @@ const Sidebar = () => {
         <Link to="/" className="flex items-center space-x-2">
           {!collapsed && (
             <span className="text-xl font-bold text-education-700">
-              AI for Teachers
+              AI för lärare
             </span>
           )}
           {collapsed && <GraduationCap className="h-6 w-6 text-education-700" />}
@@ -56,7 +56,7 @@ const Sidebar = () => {
           )}
         >
           <Home className="h-5 w-5" />
-          {!collapsed && <span>Home</span>}
+          {!collapsed && <span>Hem</span>}
         </Link>
 
         <div className="pt-2 pb-1">
@@ -81,7 +81,12 @@ const Sidebar = () => {
               {section.id}
             </span>
             {!collapsed && (
-              <span className="truncate">{section.title}</span>
+              <span className={cn(
+                "truncate",
+                location.pathname === `/section/${section.id}` && "text-lg font-bold"
+              )}>
+                {section.title}
+              </span>
             )}
           </Link>
         ))}
