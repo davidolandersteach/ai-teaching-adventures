@@ -110,31 +110,31 @@ const createStandardMoments = (sectionId: number) => [
 const sectionData = [
   {
     id: 1,
-    title: "Modul 1: Introduktion till AI – Vad är AI och hur fungerar det?",
+    title: "1 Introduktion till AI – Vad är AI och hur fungerar det??",
     description: "Förstå de grundläggande koncepten inom AI och hur de tillämpas i utbildningssammanhang. Denna sektion ger en översikt över AI-teknologier och deras potentiella påverkan på undervisning och lärande.",
     moments: createStandardMoments(1),
   },
   {
     id: 2,
-    title: "Modul 2: AI och pedagogik – Teori, forskning och evidens",
+    title: "AI och pedagogik – Teori, forskning och evidens",
     description: "Utforska pedagogiska teorier och forskningsresultat kring användningen av AI i undervisning och lärande.",
     moments: createStandardMoments(2),
   },
   {
     id: 3,
-    title: "Modul 3: AI för lärare – Verktyg och strategier i praktiken",
+    title: "AI för lärare – Verktyg och strategier i praktiken",
     description: "Lär dig praktiska verktyg och strategier för att implementera AI i ditt klassrum och din undervisning.",
     moments: createStandardMoments(3),
   },
   {
     id: 4,
-    title: "Modul 4: Bedömning och AI",
+    title: "Bedömning",
     description: "Upptäck hur AI kan förändra bedömningsmetoder, göra dem mer effektiva, personliga och verkningsfulla.",
     moments: createStandardMoments(4),
   },
   {
     id: 5,
-    title: "Modul 5: Etik och ansvarsfull användning",
+    title: "Etik och ansvarsfull användning",
     description: "Utforska de etiska övervägandena vid användning av AI i utbildning och lär dig riktlinjer för ansvarsfull implementering.",
     moments: createStandardMoments(5),
   },
