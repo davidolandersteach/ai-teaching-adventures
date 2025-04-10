@@ -72,10 +72,11 @@ const Sidebar = () => {
           <Link
             key={section.id}
             to={`/section/${section.id}`}
-            className={cn(
-              "sidebar-link my-1",
-              location.pathname === `/section/${section.id}` && "active"
-            )}
+                className={cn(
+      "sidebar-link my-1 transition-all duration-200 ease-in-out hover:bg-education-50 hover:text-education-900 hover:scale-[1.02]",
+      location.pathname === `/section/${section.id}` && "active"
+    )}
+
           >
             <span className="flex items-center justify-center h-5 w-5 text-xs font-medium rounded-full bg-education-100 text-education-800">
               {section.id}
