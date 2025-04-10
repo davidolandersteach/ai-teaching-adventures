@@ -5,14 +5,14 @@ import { BookOpen, BookText, GraduationCap, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const sectionData = [
-  { id: 1, title: "1 Introduktion till AI – Vad är AI och hur fungerar det?" },
-  { id: 2, title: "2 AI och pedagogik – Teori, forskning och evidens" },
-  { id: 3, title: "3 AI för lärare – Verktyg och strategier i praktiken" },
-  { id: 4, title: "Modul 4: Bedömning och AI" },
-  { id: 5, title: "Modul 5: Etik och ansvarsfull användning" },
-  { id: 6, title: "Modul 6: Personaliserat lärande med AI" },
-  { id: 7, title: "Modul 7: Framtiden för utbildning och AI" },
-  { id: 8, title: "Modul 8: Praktisk implementering" },
+  { id: 1, title: "Introduktion till AI – Vad är AI och hur fungerar det?" },
+  { id: 2, title: "AI och pedagogik – Teori, forskning och evidens" },
+  { id: 3, title: "AI för lärare – Verktyg och strategier i praktiken" },
+  { id: 4, title: "Bedömning" },
+  { id: 5, title: "Etik och ansvarsfull användning" },
+  { id: 6, title: "Differentierat lärande" },
+  { id: 7, title: "Praktiska exempel – Implementering av AI i klassrummet" },
+  { id: 8, title: "Utvärdering, reflektion och framtid" },
 ];
 
 const Sidebar = () => {
