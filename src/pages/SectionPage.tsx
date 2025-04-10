@@ -8,7 +8,7 @@ import EmbedGoogle from "@/components/EmbedGoogle";
 const sectionData = [
   {
     id: 1,
-    title: "Introduction to AI in Education",
+    title: Modul 1: Introduktion till AI – Vad är AI och hur fungerar det?",
     description: "Understand the foundational concepts of AI and how they apply to educational contexts. This section provides an overview of AI technologies and their potential impact on teaching and learning.",
     moments: [
       {
@@ -32,7 +32,7 @@ const sectionData = [
       },
       {
         id: 2,
-        title: "The Evolution of Educational Technology",
+        title: "Modul 2: AI och pedagogik – Teori, forskning och evidens",
         content: (
           <div>
             <p className="mb-4">
@@ -66,7 +66,7 @@ const sectionData = [
       },
       {
         id: 3,
-        title: "AI's Current Role in Education",
+        title: "Modul 3: AI för lärare – Verktyg och strategier i praktiken",
         content: (
           <div>
             <p className="mb-4">
