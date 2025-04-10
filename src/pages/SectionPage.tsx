@@ -110,7 +110,7 @@ const createStandardMoments = (sectionId: number) => [
 const sectionData = [
   {
     id: 1,
-    title: "Introduktion till AI – Vad är AI och hur fungerar det??",
+    title: "Introduktion till AI – Vad är AI och hur fungerar det?",
     description: "Förstå de grundläggande koncepten inom AI och hur de tillämpas i utbildningssammanhang. Denna sektion ger en översikt över AI-teknologier och deras potentiella påverkan på undervisning och lärande.",
     moments: createStandardMoments(1),
   },
@@ -146,7 +146,7 @@ const sectionData = [
   },
   {
     id: 7,
-    title: " Implementering av AI i klassrummet",
+    title: "AI och källkritik",
     description: "Blicka framåt mot hur AI kan komma att förändra utbildningen under de kommande åren och hur lärare kan förbereda sig.",
     moments: createStandardMoments(7),
   },
