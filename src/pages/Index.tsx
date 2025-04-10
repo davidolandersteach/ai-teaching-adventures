@@ -65,7 +65,7 @@ const OverviewSection = () => (
         <BookOpen className="h-8 w-8 text-education-600 mb-3" />
         <h3 className="text-lg font-semibold mb-2">Strukturerat lärande</h3>
         <p className="text-gray-600">
-          32 moment organiserade i 8 delar för logisk inlärning.
+          32 moment organiserade i åtta delar för logisk inlärning. Delarna bygger på varandra, men kan också användas separat.
         </p>
       </div>
       <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
