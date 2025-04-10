@@ -22,7 +22,7 @@ const Index = () => {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-bold mb-4">AI i skolan</h1>
           <p className="text-xl opacity-90 mb-6">
-            Empower your teaching with the latest in artificial intelligence. Learn how AI can transform your classroom and enhance student learning experiences.
+           klnnlknömm BLAKBMLMRGWW
           </p>
           <div className="flex gap-4 items-center">
             <Link
