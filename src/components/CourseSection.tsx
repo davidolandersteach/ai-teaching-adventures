@@ -17,6 +17,86 @@ interface CourseSectionProps {
   moments: MomentData[];
 }
 
+// Color theme mapping for each section
+const getSectionColorTheme = (sectionId: number) => {
+  const themes = {
+    1: {
+      primary: "text-blue-700",
+      secondary: "text-blue-600",
+      bg: "bg-blue-100",
+      border: "border-blue-200",
+      hover: "hover:bg-blue-50",
+      accent: "bg-blue-600",
+      light: "text-blue-500",
+    },
+    2: {
+      primary: "text-purple-700",
+      secondary: "text-purple-600",
+      bg: "bg-purple-100",
+      border: "border-purple-200",
+      hover: "hover:bg-purple-50",
+      accent: "bg-purple-600",
+      light: "text-purple-500",
+    },
+    3: {
+      primary: "text-green-700",
+      secondary: "text-green-600",
+      bg: "bg-green-100",
+      border: "border-green-200",
+      hover: "hover:bg-green-50",
+      accent: "bg-green-600",
+      light: "text-green-500",
+    },
+    4: {
+      primary: "text-orange-700",
+      secondary: "text-orange-600",
+      bg: "bg-orange-100",
+      border: "border-orange-200",
+      hover: "hover:bg-orange-50",
+      accent: "bg-orange-600",
+      light: "text-orange-500",
+    },
+    5: {
+      primary: "text-red-700",
+      secondary: "text-red-600",
+      bg: "bg-red-100",
+      border: "border-red-200",
+      hover: "hover:bg-red-50",
+      accent: "bg-red-600",
+      light: "text-red-500",
+    },
+    6: {
+      primary: "text-teal-700",
+      secondary: "text-teal-600",
+      bg: "bg-teal-100",
+      border: "border-teal-200",
+      hover: "hover:bg-teal-50",
+      accent: "bg-teal-600",
+      light: "text-teal-500",
+    },
+    7: {
+      primary: "text-indigo-700",
+      secondary: "text-indigo-600",
+      bg: "bg-indigo-100",
+      border: "border-indigo-200",
+      hover: "hover:bg-indigo-50",
+      accent: "bg-indigo-600",
+      light: "text-indigo-500",
+    },
+    8: {
+      primary: "text-pink-700",
+      secondary: "text-pink-600",
+      bg: "bg-pink-100",
+      border: "border-pink-200",
+      hover: "hover:bg-pink-50",
+      accent: "bg-pink-600",
+      light: "text-pink-500",
+    },
+  };
+
+  return themes[sectionId as keyof typeof themes] || themes[1];
+};
+
 const CourseSection: React.FC<CourseSectionProps> = ({
   sectionId,
   title,
@@ -30,14 +110,16 @@ const CourseSection: React.FC<CourseSectionProps> = ({
     setOpenMoment(openMoment === momentId ? null : momentId);
   };
 
+  const colorTheme = getSectionColorTheme(sectionId);
+
   return (
     <div className="animate-fade">
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      <div className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden`}>
         <div className="p-6">
-          <h1 className="text-3xl font-bold text-education-800">{title}</h1>
+          <h1 className={`text-3xl font-bold ${colorTheme.primary}`}>{title}</h1>
           <div className="mt-4 text-gray-600 flex items-start gap-4">
-            <div className="w-1/4 flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-              <Image className="w-full h-32 object-cover bg-gray-100 p-6" />
+            <div className={`w-1/4 flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}>
+              <Image className={`w-full h-32 object-cover ${colorTheme.bg} p-6`} />
             </div>
             <div>{description}</div>
           </div>
@@ -45,29 +127,29 @@ const CourseSection: React.FC<CourseSectionProps> = ({
       </div>
 
       <div className="mt-8 space-y-4">
-        <h2 className="text-xl font-semibold text-gray-700">
+        <h2 className={`text-xl font-semibold ${colorTheme.secondary}`}>
           Moment i modul {sectionId}
         </h2>
         
         {moments.map((moment) => (
           <div 
             key={moment.id} 
-            className="bg-white rounded-lg shadow-sm border border-gray-200 transform transition-all duration-200 hover:shadow-md"
+            className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} transform transition-all duration-200 hover:shadow-md`}
           >
             <button
               onClick={() => toggleMoment(moment.id)}
-              className="w-full p-4 flex justify-between items-center text-left focus:outline-none"
+              className={`w-full p-4 flex justify-between items-center text-left focus:outline-none ${colorTheme.hover}`}
             >
               <div className="flex items-center">
-                <div className="flex-shrink-0 h-8 w-8 mr-3 bg-education-100 text-education-700 rounded-full flex items-center justify-center font-medium">
+                <div className={`flex-shrink-0 h-8 w-8 mr-3 ${colorTheme.bg} ${colorTheme.primary} rounded-full flex items-center justify-center font-medium`}>
                   {moment.id}
                 </div>
-                <h3 className="text-lg font-medium text-gray-900">{moment.title}</h3>
+                <h3 className={`text-lg font-medium ${colorTheme.primary}`}>{moment.title}</h3>
               </div>
               {openMoment === moment.id ? (
-                <ChevronUp className="h-5 w-5 text-gray-400" />
+                <ChevronUp className={`h-5 w-5 ${colorTheme.light}`} />
               ) : (
-                <ChevronDown className="h-5 w-5 text-gray-400" />
+                <ChevronDown className={`h-5 w-5 ${colorTheme.light}`} />
               )}
             </button>
             <div
@@ -76,7 +158,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({
                 openMoment === moment.id ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
               )}
             >
-              <div className="p-4 border-t border-gray-100">
+              <div className={`p-4 border-t ${colorTheme.border}`}>
                 <MomentContent content={moment.content} />
               </div>
             </div>

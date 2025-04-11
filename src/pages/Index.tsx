@@ -1,6 +1,63 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, GraduationCap, Users } from "lucide-react";
+
+// Define color themes for each section
+const getSectionColorTheme = (sectionId: number) => {
+  const themes = {
+    1: {
+      bg: "bg-blue-100",
+      border: "border-blue-200",
+      text: "text-blue-700",
+      hover: "hover:bg-blue-50",
+    },
+    2: {
+      bg: "bg-purple-100",
+      border: "border-purple-200",
+      text: "text-purple-700",
+      hover: "hover:bg-purple-50",
+    },
+    3: {
+      bg: "bg-green-100",
+      border: "border-green-200",
+      text: "text-green-700",
+      hover: "hover:bg-green-50",
+    },
+    4: {
+      bg: "bg-orange-100",
+      border: "border-orange-200",
+      text: "text-orange-700",
+      hover: "hover:bg-orange-50",
+    },
+    5: {
+      bg: "bg-red-100",
+      border: "border-red-200",
+      text: "text-red-700",
+      hover: "hover:bg-red-50",
+    },
+    6: {
+      bg: "bg-teal-100",
+      border: "border-teal-200",
+      text: "text-teal-700",
+      hover: "hover:bg-teal-50",
+    },
+    7: {
+      bg: "bg-indigo-100",
+      border: "border-indigo-200",
+      text: "text-indigo-700",
+      hover: "hover:bg-indigo-50",
+    },
+    8: {
+      bg: "bg-pink-100",
+      border: "border-pink-200",
+      text: "text-pink-700",
+      hover: "hover:bg-pink-50",
+    },
+  };
+
+  return themes[sectionId as keyof typeof themes] || themes[1];
+};
 
 // Sample data for course sections
 const sectionData = [
@@ -84,27 +141,31 @@ const CourseSections = () => (
   <section>
     <h2 className="text-2xl font-bold text-gray-800 mb-4">Kursens delar</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {sectionData.map((section) => (
-        <Link
-          key={section.id}
-          to={`/section/${section.id}`}
-          className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow group"
-        >
-          <div className="flex flex-col h-full">
-            <div className="flex items-center mb-3">
-              <div className="flex-shrink-0 h-8 w-8 bg-education-100 text-education-700 rounded-full flex items-center justify-center font-medium">
-                {section.id}
+      {sectionData.map((section) => {
+        const colorTheme = getSectionColorTheme(section.id);
+        
+        return (
+          <Link
+            key={section.id}
+            to={`/section/${section.id}`}
+            className={`bg-white rounded-lg border ${colorTheme.border} p-4 hover:shadow-md transition-shadow group ${colorTheme.hover}`}
+          >
+            <div className="flex flex-col h-full">
+              <div className="flex items-center mb-3">
+                <div className={`flex-shrink-0 h-8 w-8 ${colorTheme.bg} ${colorTheme.text} rounded-full flex items-center justify-center font-medium`}>
+                  {section.id}
+                </div>
+              </div>
+              <h3 className={`text-lg font-medium ${colorTheme.text} group-hover:font-semibold transition-all`}>
+                {section.title}
+              </h3>
+              <div className="mt-auto pt-4 flex justify-end">
+                <ArrowRight className={`h-5 w-5 ${colorTheme.text} group-hover:translate-x-1 transition-transform`} />
               </div>
             </div>
-            <h3 className="text-lg font-medium text-gray-900 group-hover:text-education-600 transition-colors">
-              {section.title}
-            </h3>
-            <div className="mt-auto pt-4 flex justify-end">
-              <ArrowRight className="h-5 w-5 text-education-600 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </div>
-        </Link>
-      ))}
+          </Link>
+        );
+      })}
     </div>
   </section>
 );
