@@ -99,10 +99,10 @@ const getSectionColorTheme = (sectionId: number) => {
 // Module image mapping
 const getModuleImage = (sectionId: number) => {
   const images = {
-    1: "/lovable-uploads/046c6fdb-5820-4900-8e27-2405c5c10d22.png", // Module 1 image
+    1: "/lovable-uploads/1df94af2-211c-4683-b744-0e1cab6e6ca8.png", // Module 1 image
     2: "/lovable-uploads/99a70897-68c4-4af1-8876-0bb4044025b0.png", // Module 2 image
-    3: "/lovable-uploads/347e9312-ec20-4b2a-a718-b88cc9c5a042.png", // Module 3 image
-    4: "/lovable-uploads/1df94af2-211c-4683-b744-0e1cab6e6ca8.png", // Module 4 image
+    3: "/lovable-uploads/046c6fdb-5820-4900-8e27-2405c5c10d22.png", // Module 3 image
+    4: "/lovable-uploads/347e9312-ec20-4b2a-a718-b88cc9c5a042.png", // Module 4 image
   };
 
   return images[sectionId as keyof typeof images] || null;
