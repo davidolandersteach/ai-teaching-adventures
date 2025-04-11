@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp, Image } from "lucide-react";
@@ -97,6 +96,18 @@ const getSectionColorTheme = (sectionId: number) => {
   return themes[sectionId as keyof typeof themes] || themes[1];
 };
 
+// Module image mapping
+const getModuleImage = (sectionId: number) => {
+  const images = {
+    1: "/lovable-uploads/046c6fdb-5820-4900-8e27-2405c5c10d22.png", // Module 1 image
+    2: "/lovable-uploads/99a70897-68c4-4af1-8876-0bb4044025b0.png", // Module 2 image
+    3: "/lovable-uploads/347e9312-ec20-4b2a-a718-b88cc9c5a042.png", // Module 3 image
+    4: "/lovable-uploads/1df94af2-211c-4683-b744-0e1cab6e6ca8.png", // Module 4 image
+  };
+
+  return images[sectionId as keyof typeof images] || null;
+};
+
 const CourseSection: React.FC<CourseSectionProps> = ({
   sectionId,
   title,
@@ -111,6 +122,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   };
 
   const colorTheme = getSectionColorTheme(sectionId);
+  const moduleImage = getModuleImage(sectionId);
 
   return (
     <div className="animate-fade">
@@ -119,7 +131,13 @@ const CourseSection: React.FC<CourseSectionProps> = ({
           <h1 className={`text-3xl font-bold ${colorTheme.primary}`}>{title}</h1>
           <div className="mt-4 text-gray-600 flex items-start gap-4">
             <div className={`w-1/4 flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}>
-              <Image className={`w-full h-32 object-cover ${colorTheme.bg} p-6`} />
+              {moduleImage ? (
+                <img src={moduleImage} alt={`Modul ${sectionId}`} className="w-full h-auto object-cover" />
+              ) : (
+                <div className={`w-full h-32 ${colorTheme.bg} flex items-center justify-center`}>
+                  <span className={`text-2xl font-bold ${colorTheme.primary}`}>#{sectionId}</span>
+                </div>
+              )}
             </div>
             <div>{description}</div>
           </div>
