@@ -10,8 +10,9 @@ const MomentContent: React.FC<MomentContentProps> = ({ content }) => {
     <div className="prose max-w-none">
       {content}
       
-      {/* Fix for embedded images */}
-      <style jsx>{`
+      {/* Additional styles for embedded content */}
+      <style>
+        {`
         .prose img {
           max-width: 100%;
           height: auto;
@@ -24,7 +25,8 @@ const MomentContent: React.FC<MomentContentProps> = ({ content }) => {
           border-radius: 0.375rem;
           margin: 1rem 0;
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
