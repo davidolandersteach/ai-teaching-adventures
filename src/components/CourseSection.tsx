@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp, Image } from "lucide-react";
 import MomentContent from "./MomentContent";
@@ -23,15 +23,8 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   description,
   moments,
 }) => {
-  // Set the first moment as open by default
+  // Initialize with all moments closed
   const [openMoment, setOpenMoment] = useState<number | null>(null);
-
-  // Initialize with the first moment open
-  useEffect(() => {
-    if (moments && moments.length > 0) {
-      setOpenMoment(moments[0].id);
-    }
-  }, [moments]);
 
   const toggleMoment = (momentId: number) => {
     setOpenMoment(openMoment === momentId ? null : momentId);
