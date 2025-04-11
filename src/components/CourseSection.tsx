@@ -1,7 +1,7 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Image } from "lucide-react";
 import MomentContent from "./MomentContent";
 
 interface MomentData {
@@ -23,7 +23,15 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   description,
   moments,
 }) => {
+  // Set the first moment as open by default
   const [openMoment, setOpenMoment] = useState<number | null>(null);
+
+  // Initialize with the first moment open
+  useEffect(() => {
+    if (moments && moments.length > 0) {
+      setOpenMoment(moments[0].id);
+    }
+  }, [moments]);
 
   const toggleMoment = (momentId: number) => {
     setOpenMoment(openMoment === momentId ? null : momentId);
@@ -34,7 +42,12 @@ const CourseSection: React.FC<CourseSectionProps> = ({
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
         <div className="p-6">
           <h1 className="text-3xl font-bold text-education-800">{title}</h1>
-          <div className="mt-4 text-gray-600">{description}</div>
+          <div className="mt-4 text-gray-600 flex items-start gap-4">
+            <div className="w-1/4 flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
+              <Image className="w-full h-32 object-cover bg-gray-100 p-6" />
+            </div>
+            <div>{description}</div>
+          </div>
         </div>
       </div>
 
