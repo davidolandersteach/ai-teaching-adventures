@@ -37,7 +37,7 @@ const Sidebar = () => {
         </Link>
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="p-1 rounded-md hover:bg-gray-200"
+          className="p-1 rounded-md hover:bg-gray-200 transition-colors"
         >
           {collapsed ? (
             <BookOpen className="h-5 w-5" />
@@ -51,7 +51,7 @@ const Sidebar = () => {
         <Link
           to="/"
           className={cn(
-            "sidebar-link mb-2",
+            "sidebar-link mb-2 transition-all duration-200",
             location.pathname === "/" && "active"
           )}
         >
@@ -72,19 +72,18 @@ const Sidebar = () => {
           <Link
             key={section.id}
             to={`/section/${section.id}`}
-                className={cn(
-      "sidebar-link my-1 transition-all duration-200 ease-in-out hover:bg-education-50 hover:text-education-900 hover:scale-[1.02]",
-      location.pathname === `/section/${section.id}` && "active"
-    )}
-
+            className={cn(
+              "sidebar-link my-1 transition-all duration-200 ease-in-out hover:bg-education-50 hover:text-education-900 hover:scale-[1.02] hover:font-medium",
+              location.pathname === `/section/${section.id}` && "active"
+            )}
           >
             <span className="flex items-center justify-center h-5 w-5 text-xs font-medium rounded-full bg-education-100 text-education-800">
               {section.id}
             </span>
             {!collapsed && (
               <span className={cn(
-                "truncate",
-                location.pathname === `/section/${section.id}` && "text-lg font-bold"
+                "truncate transition-all duration-200",
+                location.pathname === `/section/${section.id}` ? "text-lg font-bold" : ""
               )}>
                 {section.title}
               </span>

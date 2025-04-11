@@ -39,10 +39,15 @@ const CourseSection: React.FC<CourseSectionProps> = ({
       </div>
 
       <div className="mt-8 space-y-4">
-        <h2 className="text-xl font-semibold text-gray-700">Delens moment</h2>
+        <h2 className="text-xl font-semibold text-gray-700">
+          Moment i modul {sectionId}
+        </h2>
         
         {moments.map((moment) => (
-          <div key={moment.id} className="bg-white rounded-lg shadow-sm border border-gray-200">
+          <div 
+            key={moment.id} 
+            className="bg-white rounded-lg shadow-sm border border-gray-200 transform transition-all duration-200 hover:shadow-md"
+          >
             <button
               onClick={() => toggleMoment(moment.id)}
               className="w-full p-4 flex justify-between items-center text-left focus:outline-none"
@@ -62,7 +67,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({
             <div
               className={cn(
                 "overflow-hidden transition-all duration-300",
-                openMoment === moment.id ? "max-h-[2000px]" : "max-h-0"
+                openMoment === moment.id ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
               )}
             >
               <div className="p-4 border-t border-gray-100">

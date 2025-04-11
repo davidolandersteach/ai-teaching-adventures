@@ -5,106 +5,273 @@ import CourseSection from "@/components/CourseSection";
 import EmbedYoutube from "@/components/EmbedYoutube";
 import EmbedGoogle from "@/components/EmbedGoogle";
 
-// Standardized moment templates for all sections
-const createStandardMoments = (sectionId: number) => [
-  {
-    id: 1,
-    title: "Moment A",
-    content: (
-      <div>
-        <p className="mb-4">
-          Här kommer en introduktion till detta moment. Denna text kommer att uppdateras med specifikt innehåll för varje sektion.
-        </p>
-        <h3 className="text-xl font-medium mb-2">Instruktioner</h3>
-        <p className="mb-4">
-          För att genomföra detta moment ska du:
-        </p>
-        <ol className="list-decimal pl-5 my-3">
-          <li>Läsa artikeln nedan</li>
-          <li>Titta på videon</li>
-          <li>Reflektera över innehållet</li>
-        </ol>
-        
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
-          <h4 className="font-medium mb-2">Artikel</h4>
-          <p className="text-gray-600">Länk till artikel kommer att läggas in här.</p>
-        </div>
-        
-        <EmbedYoutube videoId="dQw4w9WgXcQ" title={"Video för Sektion " + sectionId + ", Moment A"} />
-        
-        <div className="mt-4 bg-education-50 p-4 rounded-lg border border-education-100">
-          <h4 className="font-medium text-education-800 mb-2">Lär dig mer</h4>
-          <ul className="list-disc pl-5 text-education-700">
-            <li>Ytterligare resurs 1</li>
-            <li>Ytterligare resurs 2</li>
-            <li>Ytterligare resurs 3</li>
-          </ul>
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 2,
-    title: "Moment B",
-    content: (
-      <div>
-        <h3 className="text-xl font-medium mb-3">Diskussionsfrågor utifrån Moment A</h3>
-        <ul className="list-disc pl-5 mb-6 text-gray-700">
-          <li>Diskussionsfråga 1</li>
-          <li>Diskussionsfråga 2</li>
-          <li>Diskussionsfråga 3</li>
-          <li>Diskussionsfråga 4</li>
-        </ul>
-        
-        <h3 className="text-xl font-medium mb-3">Förbered en aktivitet</h3>
-        <ul className="list-disc pl-5 mb-4 text-gray-700">
-          <li>Förberedelse 1</li>
-          <li>Förberedelse 2</li>
-          <li>Förberedelse 3</li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    id: 3,
-    title: "Moment C",
-    content: (
-      <div>
-        <h3 className="text-xl font-medium mb-3">Moment C – aktivitet</h3>
-        <p className="mb-4">Genomför den planerade aktiviteten.</p>
-      </div>
-    ),
-  },
-  {
-    id: 4,
-    title: "Moment D",
-    content: (
-      <div>
-        <h3 className="text-xl font-medium mb-3">Moment D – gemensam uppföljning</h3>
-        
-        <h4 className="text-lg font-medium mb-2 mt-4">Diskutera</h4>
-        <p className="mb-3">Diskutera era observationer utifrån anteckningarna som ni gjorde i "Moment C"</p>
-        
-        <h5 className="font-medium mb-2">Diskussionsfrågor</h5>
-        <ul className="list-disc pl-5 mb-6 text-gray-700">
-          <li>Diskussionsfråga 1</li>
-          <li>Diskussionsfråga 2</li>
-          <li>Diskussionsfråga 3</li>
-        </ul>
-        
-        <h4 className="text-lg font-medium mb-2">Reflektera</h4>
-        <p className="mb-3">Avsätt de sista tio minuterna för att reflektera över:</p>
-        
-        <ul className="list-disc pl-5 mb-4 text-gray-700">
-          <li>Vad gjorde jag/vi?</li>
-          <li>Vad lärde jag mig?</li>
-        </ul>
-        
-        <p className="italic mt-4">Sammanfatta tillsammans arbetet med denna del i några punkter.</p>
-      </div>
-    ),
-  },
-];
+// Create distinct moments for each section
+const createSectionMoments = (sectionId: number) => {
+  switch(sectionId) {
+    case 1:
+      return [
+        {
+          id: 1,
+          title: "Grundläggande AI-koncept",
+          content: (
+            <div>
+              <p className="mb-4">
+                I detta moment utforskar vi grundläggande AI-koncept och hur de kan appliceras i utbildningssammanhang.
+              </p>
+              <EmbedYoutube videoId="dQw4w9WgXcQ" title="Introduktion till AI i utbildning" />
+              <div className="mt-4">
+                <h4 className="font-medium mb-2">Reflektionsfrågor</h4>
+                <ul className="list-disc pl-5">
+                  <li>Hur kan AI förändra hur vi undervisar?</li>
+                  <li>Vilka är de främsta möjligheterna med AI i klassrummet?</li>
+                </ul>
+              </div>
+            </div>
+          ),
+        },
+        {
+          id: 2,
+          title: "Maskininlärning och algoritmer",
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Maskininlärning i pedagogisk kontext</h3>
+              <p className="mb-4">
+                Maskininlärning är en central del av AI som möjliggör system som kan lära av data och förbättras över tid.
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+                <h4 className="font-medium mb-2">Praktisk övning</h4>
+                <p>Testa ett enklare AI-verktyg och reflektera över hur det skulle kunna användas i din undervisning.</p>
+              </div>
+            </div>
+          ),
+        },
+        {
+          id: 3,
+          title: "AI-verktyg för utbildning",
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Genomgång av verktyg</h3>
+              <p className="mb-4">I detta moment ska vi bekanta oss med olika AI-verktyg för utbildning.</p>
+              <ol className="list-decimal pl-5 my-3">
+                <li>Intelligent tutoring systems</li>
+                <li>Automatiserad bedömning</li>
+                <li>Adaptivt lärande</li>
+                <li>Chatbots för elevstöd</li>
+              </ol>
+            </div>
+          ),
+        },
+        {
+          id: 4,
+          title: "Reflektion och framtidsplanering",
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Diskussion om framtiden</h3>
+              <p className="mb-4">
+                Reflektera över hur AI kan förändra din undervisningspraktik på kort och lång sikt.
+              </p>
+              <div className="mt-4 bg-education-50 p-4 rounded-lg border border-education-100">
+                <h4 className="font-medium text-education-800 mb-2">Din plan</h4>
+                <p>Skapa en enkel handlingsplan för hur du skulle kunna integrera AI i din undervisning.</p>
+              </div>
+            </div>
+          ),
+        },
+      ];
+    
+    case 2:
+      return [
+        {
+          id: 1,
+          title: "Pedagogiska teorier och AI",
+          content: (
+            <div>
+              <p className="mb-4">
+                Hur relaterar AI till befintliga pedagogiska teorier och metoder? Vi utforskar kopplingen mellan AI och pedagogik.
+              </p>
+              <h3 className="text-xl font-medium mb-2">Centrala teorier</h3>
+              <ul className="list-disc pl-5 mb-4">
+                <li>Konstruktivism</li>
+                <li>Sociokulturell teori</li>
+                <li>Konnektivism</li>
+                <li>Behaviorism</li>
+              </ul>
+              <EmbedYoutube videoId="dQw4w9WgXcQ" title="AI och pedagogiska teorier" />
+            </div>
+          ),
+        },
+        {
+          id: 2,
+          title: "Forskningsbaserad AI-användning",
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Vad säger forskningen?</h3>
+              <p className="mb-4">
+                Vi undersöker aktuell forskning om AI i utbildningssammanhang och vilken evidens som finns.
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+                <h4 className="font-medium mb-2">Forskningsstudie</h4>
+                <p>Genomgång av meta-studier om AI och lärande.</p>
+              </div>
+            </div>
+          ),
+        },
+        {
+          id: 3,
+          title: "Praktiska exempel",
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">AI i praktiken</h3>
+              <p className="mb-4">Flera skolor och lärare använder redan AI med goda resultat. Här är några exempel:</p>
+              <ol className="list-decimal pl-5 my-3">
+                <li>Carnegie Learning och Mika</li>
+                <li>DreamBox Learning</li>
+                <li>AI-stödda lärplattformar</li>
+              </ol>
+            </div>
+          ),
+        },
+        {
+          id: 4,
+          title: "Kritiska perspektiv",
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Kritisk granskning</h3>
+              <p className="mb-4">
+                Det är viktigt att kritiskt granska både forskning och kommersiella påståenden om AI:s effekter i utbildningen.
+              </p>
+              <div className="mt-4 bg-education-50 p-4 rounded-lg border border-education-100">
+                <h4 className="font-medium text-education-800 mb-2">Gruppdiskussion</h4>
+                <p>Diskutera styrkor och svagheter med befintlig forskning om AI i utbildning.</p>
+              </div>
+            </div>
+          ),
+        },
+      ];
+    
+    case 3:
+      return [
+        {
+          id: 1,
+          title: "AI-verktyg för lärare",
+          content: (
+            <div>
+              <p className="mb-4">
+                En översikt över användbara AI-verktyg specifikt utvecklade för lärare.
+              </p>
+              <h3 className="text-xl font-medium mb-2">Praktiska verktyg</h3>
+              <ul className="list-disc pl-5 mb-4">
+                <li>Verktyg för planering och administration</li>
+                <li>AI-assistenter för lärare</li>
+                <li>Verktyg för innehållsskapande</li>
+                <li>Bedömningsverktyg</li>
+              </ul>
+              <EmbedYoutube videoId="dQw4w9WgXcQ" title="AI-verktyg för lärare" />
+            </div>
+          ),
+        },
+        {
+          id: 2,
+          title: "Strategier för implementering",
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Implementera AI i klassrummet</h3>
+              <p className="mb-4">
+                Praktiska strategier för att integrera AI i undervisningen på ett meningsfullt sätt.
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+                <h4 className="font-medium mb-2">Projektplanering</h4>
+                <p>Utveckla en plan för hur du kan implementera ett AI-verktyg i en specifik lektion.</p>
+              </div>
+            </div>
+          ),
+        },
+        {
+          id: 3,
+          title: "Hantera utmaningar",
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Utmaningar och lösningar</h3>
+              <p className="mb-4">Vi diskuterar vanliga utmaningar vid implementering av AI och hur dessa kan hanteras:</p>
+              <ol className="list-decimal pl-5 my-3">
+                <li>Tekniska utmaningar</li>
+                <li>Kompetensutveckling</li>
+                <li>Etiska överväganden</li>
+                <li>Förankring hos kollegor och ledning</li>
+              </ol>
+            </div>
+          ),
+        },
+        {
+          id: 4,
+          title: "Delning och samarbete",
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Samarbete kring AI</h3>
+              <p className="mb-4">
+                Hur kan lärare samarbeta för att utveckla sin användning av AI i undervisningen?
+              </p>
+              <div className="mt-4 bg-education-50 p-4 rounded-lg border border-education-100">
+                <h4 className="font-medium text-education-800 mb-2">Kollegialt lärande</h4>
+                <p>Skapa en plan för hur du kan dela dina erfarenheter med kollegor.</p>
+              </div>
+            </div>
+          ),
+        },
+      ];
+
+    // Default moments for other sections (4-8)
+    default:
+      return [
+        {
+          id: 1,
+          title: `Moment A - Sektion ${sectionId}`,
+          content: (
+            <div>
+              <p className="mb-4">
+                Innehåll för sektion {sectionId}, moment A. Detta kommer att anpassas med specifikt innehåll.
+              </p>
+              <EmbedYoutube videoId="dQw4w9WgXcQ" title={`Video för Sektion ${sectionId}, Moment A`} />
+            </div>
+          ),
+        },
+        {
+          id: 2,
+          title: `Moment B - Sektion ${sectionId}`,
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Diskussionsfrågor</h3>
+              <ul className="list-disc pl-5 mb-6 text-gray-700">
+                <li>Hur kan innehållet från moment A appliceras i din undervisning?</li>
+                <li>Vilka utmaningar ser du med implementeringen?</li>
+                <li>Vilka möjligheter skapar detta för dina elever?</li>
+              </ul>
+            </div>
+          ),
+        },
+        {
+          id: 3,
+          title: `Moment C - Sektion ${sectionId}`,
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Praktisk aktivitet</h3>
+              <p className="mb-4">En praktisk aktivitet relaterad till sektion {sectionId}.</p>
+            </div>
+          ),
+        },
+        {
+          id: 4,
+          title: `Moment D - Sektion ${sectionId}`,
+          content: (
+            <div>
+              <h3 className="text-xl font-medium mb-3">Reflektion och uppföljning</h3>
+              <p className="mb-4">Reflektera över lärande och framsteg i sektion {sectionId}.</p>
+            </div>
+          ),
+        },
+      ];
+  }
+};
 
 // Sample content for the sections
 const sectionData = [
@@ -112,49 +279,49 @@ const sectionData = [
     id: 1,
     title: "Introduktion till AI – Vad är AI och hur fungerar det?",
     description: "Förstå de grundläggande koncepten inom AI och hur de tillämpas i utbildningssammanhang. Denna sektion ger en översikt över AI-teknologier och deras potentiella påverkan på undervisning och lärande.",
-    moments: createStandardMoments(1),
+    moments: [], // Will be populated dynamically
   },
   {
     id: 2,
     title: "AI och pedagogik – Teori, forskning och evidens",
     description: "Utforska pedagogiska teorier och forskningsresultat kring användningen av AI i undervisning och lärande.",
-    moments: createStandardMoments(2),
+    moments: [], // Will be populated dynamically
   },
   {
     id: 3,
     title: "AI för lärare – Verktyg och strategier i praktiken",
     description: "Lär dig praktiska verktyg och strategier för att implementera AI i ditt klassrum och din undervisning.",
-    moments: createStandardMoments(3),
+    moments: [], // Will be populated dynamically
   },
   {
     id: 4,
     title: "Bedömning",
     description: "Upptäck hur AI kan förändra bedömningsmetoder, göra dem mer effektiva, personliga och verkningsfulla.",
-    moments: createStandardMoments(4),
+    moments: [], // Will be populated dynamically
   },
   {
     id: 5,
     title: "Etik och ansvarsfull användning",
     description: "Utforska de etiska övervägandena vid användning av AI i utbildning och lär dig riktlinjer för ansvarsfull implementering.",
-    moments: createStandardMoments(5),
+    moments: [], // Will be populated dynamically
   },
   {
     id: 6,
     title: "Differentierat lärande",
     description: "Lär dig hur AI kan hjälpa till att skapa verkligt personaliserade lärandeupplevelser för elever med alla förmågor.",
-    moments: createStandardMoments(6),
+    moments: [], // Will be populated dynamically
   },
   {
     id: 7,
     title: "AI och källkritik",
     description: "Blicka framåt mot hur AI kan komma att förändra utbildningen under de kommande åren och hur lärare kan förbereda sig.",
-    moments: createStandardMoments(7),
+    moments: [], // Will be populated dynamically
   },
   {
     id: 8,
-    title: "AI för bedömning",
+    title: "Utvärdering, reflektion och framtid",
     description: "Sammanfatta allt med praktiska steg för att implementera AI i din specifika utbildningskontext.",
-    moments: createStandardMoments(8),
+    moments: [], // Will be populated dynamically
   },
 ];
 
@@ -163,15 +330,19 @@ const SectionPage = () => {
   const navigate = useNavigate();
   const sectionId = parseInt(id || "1");
   
-  // Find the section data based on the ID
-  const section = sectionData.find((s) => s.id === sectionId);
+  // Find the section data based on the ID and generate specific moments
+  let section = sectionData.find((s) => s.id === sectionId);
   
   useEffect(() => {
     // If section not found, redirect to home
     if (!section) {
       navigate("/");
+      return;
     }
-  }, [section, navigate]);
+    
+    // Generate specific moments for this section
+    section.moments = createSectionMoments(sectionId);
+  }, [section, sectionId, navigate]);
 
   if (!section) {
     return null;
