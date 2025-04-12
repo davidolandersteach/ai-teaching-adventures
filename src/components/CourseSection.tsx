@@ -96,13 +96,13 @@ const getSectionColorTheme = (sectionId: number) => {
   return themes[sectionId as keyof typeof themes] || themes[1];
 };
 
-// Module image mapping
+// Module image mapping - updated with correct assignments
 const getModuleImage = (sectionId: number) => {
   const images = {
-    1: "/lovable-uploads/1df94af2-211c-4683-b744-0e1cab6e6ca8.png", // Module 1 image
-    2: "/lovable-uploads/99a70897-68c4-4af1-8876-0bb4044025b0.png", // Module 2 image
-    3: "/lovable-uploads/046c6fdb-5820-4900-8e27-2405c5c10d22.png", // Module 3 image
-    4: "/lovable-uploads/347e9312-ec20-4b2a-a718-b88cc9c5a042.png", // Module 4 image
+    1: "/lovable-uploads/347e9312-ec20-4b2a-a718-b88cc9c5a042.png", // Module 1 image (was on #4)
+    2: "/lovable-uploads/99a70897-68c4-4af1-8876-0bb4044025b0.png", // Module 2 image (stays the same)
+    3: "/lovable-uploads/1df94af2-211c-4683-b744-0e1cab6e6ca8.png", // Module 3 image (was on #1)
+    4: "/lovable-uploads/046c6fdb-5820-4900-8e27-2405c5c10d22.png", // Module 4 image (was on #3)
   };
 
   return images[sectionId as keyof typeof images] || null;
@@ -114,8 +114,9 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   description,
   moments,
 }) => {
-  // Initialize with all moments closed
+  // Initialize with all moments open when section is clicked
   const [openMoment, setOpenMoment] = useState<number | null>(null);
+  const [momentsVisible, setMomentsVisible] = useState(false);
 
   const toggleMoment = (momentId: number) => {
     setOpenMoment(openMoment === momentId ? null : momentId);
@@ -126,11 +127,14 @@ const CourseSection: React.FC<CourseSectionProps> = ({
 
   return (
     <div className="animate-fade">
-      <div className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden`}>
+      <div 
+        className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden cursor-pointer hover:shadow-md transition-shadow`}
+        onClick={() => setMomentsVisible(!momentsVisible)}
+      >
         <div className="p-6">
           <h1 className={`text-3xl font-bold ${colorTheme.primary}`}>{title}</h1>
           <div className="mt-4 text-gray-600 flex items-start gap-4">
-            <div className={`w-1/4 flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}>
+            <div className={`w-1/5 flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}>
               {moduleImage ? (
                 <img src={moduleImage} alt={`Modul ${sectionId}`} className="w-full h-auto object-cover" />
               ) : (
@@ -144,7 +148,10 @@ const CourseSection: React.FC<CourseSectionProps> = ({
         </div>
       </div>
 
-      <div className="mt-8 space-y-4">
+      <div className={cn(
+        "mt-8 space-y-4 transition-all duration-300",
+        momentsVisible ? "block" : "hidden"
+      )}>
         <h2 className={`text-xl font-semibold ${colorTheme.secondary}`}>
           Moment i modul {sectionId}
         </h2>
@@ -155,7 +162,10 @@ const CourseSection: React.FC<CourseSectionProps> = ({
             className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} transform transition-all duration-200 hover:shadow-md`}
           >
             <button
-              onClick={() => toggleMoment(moment.id)}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleMoment(moment.id);
+              }}
               className={`w-full p-4 flex justify-between items-center text-left focus:outline-none ${colorTheme.hover}`}
             >
               <div className="flex items-center">
