@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -129,15 +130,16 @@ const CourseSection: React.FC<CourseSectionProps> = ({
         className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden hover:shadow-md transition-shadow relative`}
       >
         <div className="p-6 relative">
-          {/* Position image at top right */}
+          {/* Position image at top right with improved positioning and sizing */}
           {moduleImage && (
             <div 
-              className={`absolute top-6 right-6 w-1/4 flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}
+              className={`absolute top-4 right-4 w-1/4 max-w-[200px] flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}
+              style={{ maxHeight: '160px' }}
             >
               <img 
                 src={moduleImage} 
                 alt={`Modul ${sectionId}`} 
-                className="w-full h-auto object-cover" 
+                className="w-full h-auto object-contain" 
               />
             </div>
           )}
@@ -152,7 +154,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({
         </div>
       </div>
 
-      {/* Moments section - always visible */}
+      {/* Moments section - always visible but collapsed */}
       <div className="mt-8 space-y-4 transition-all duration-300">
         <h2 className={`text-xl font-semibold ${colorTheme.secondary}`}>
           Moment i modul {sectionId}
@@ -179,10 +181,12 @@ const CourseSection: React.FC<CourseSectionProps> = ({
                 <ChevronDown className={`h-5 w-5 ${colorTheme.light}`} />
               )}
             </button>
-            {/* Content is always visible, no need for animation or toggle */}
-            <div className="p-4 border-t border-gray-100">
-              <MomentContent content={moment.content} />
-            </div>
+            {/* Content is only visible when the moment is opened */}
+            {openMoment === moment.id && (
+              <div className="p-4 border-t border-gray-100">
+                <MomentContent content={moment.content} />
+              </div>
+            )}
           </div>
         ))}
       </div>
