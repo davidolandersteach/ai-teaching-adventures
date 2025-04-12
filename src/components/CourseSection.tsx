@@ -96,13 +96,13 @@ const getSectionColorTheme = (sectionId: number) => {
   return themes[sectionId as keyof typeof themes] || themes[1];
 };
 
-// Module image mapping - fixed with correct assignments
+// Module image mapping - corrected according to user's request
 const getModuleImage = (sectionId: number) => {
   const images = {
-    1: "/lovable-uploads/347e9312-ec20-4b2a-a718-b88cc9c5a042.png", // Module 1 image
-    2: "/lovable-uploads/99a70897-68c4-4af1-8876-0bb4044025b0.png", // Module 2 image
-    3: "/lovable-uploads/1df94af2-211c-4683-b744-0e1cab6e6ca8.png", // Module 3 image
-    4: "/lovable-uploads/046c6fdb-5820-4900-8e27-2405c5c10d22.png", // Module 4 image
+    1: "/lovable-uploads/046c6fdb-5820-4900-8e27-2405c5c10d22.png", // Module 1 image (was on #4)
+    2: "/lovable-uploads/99a70897-68c4-4af1-8876-0bb4044025b0.png", // Module 2 image (stays the same)
+    3: "/lovable-uploads/347e9312-ec20-4b2a-a718-b88cc9c5a042.png", // Module 3 image (was on #1)
+    4: "/lovable-uploads/1df94af2-211c-4683-b744-0e1cab6e6ca8.png", // Module 4 image (was on #3)
   };
 
   return images[sectionId as keyof typeof images] || null;
@@ -128,14 +128,23 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   return (
     <div className="animate-fade">
       <div 
-        className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden cursor-pointer hover:shadow-md transition-shadow`}
-        onClick={() => setMomentsVisible(!momentsVisible)}
+        className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden cursor-pointer hover:shadow-md transition-shadow relative`}
       >
-        <div className="p-6">
-          <h1 className={`text-3xl font-bold ${colorTheme.primary}`}>{title}</h1>
-          <div className="mt-4 text-gray-600 flex items-start gap-4">
-            <div className="flex-grow">{description}</div>
-            <div className={`w-1/4 flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}>
+        <div 
+          className="p-6"
+          onClick={() => setMomentsVisible(!momentsVisible)}
+        >
+          <div className="flex items-start">
+            <div className="flex-grow">
+              <h1 className={`text-3xl font-bold ${colorTheme.primary}`}>{title}</h1>
+              <div className="mt-4 text-gray-600">
+                {description}
+              </div>
+            </div>
+            <div 
+              className={`ml-4 w-1/4 flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}
+              onClick={(e) => e.stopPropagation()} // Prevent image clicks from toggling the module
+            >
               {moduleImage ? (
                 <img src={moduleImage} alt={`Modul ${sectionId}`} className="w-full h-auto object-cover" />
               ) : (
