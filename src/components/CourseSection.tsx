@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronUp, Image } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import MomentContent from "./MomentContent";
 
 interface MomentData {
@@ -96,13 +96,13 @@ const getSectionColorTheme = (sectionId: number) => {
   return themes[sectionId as keyof typeof themes] || themes[1];
 };
 
-// Module image mapping - corrected according to user's request
+// Module image mapping with correct assignments based on user's instructions
 const getModuleImage = (sectionId: number) => {
   const images = {
-    1: "/lovable-uploads/046c6fdb-5820-4900-8e27-2405c5c10d22.png", // Module 1 image (was on #4)
+    1: "/lovable-uploads/796c8632-5a2e-4bc0-bb56-0cbe324f94aa.png", // Del 1 igen (orange robot+brain on screen)
     2: "/lovable-uploads/99a70897-68c4-4af1-8876-0bb4044025b0.png", // Module 2 image (stays the same)
-    3: "/lovable-uploads/347e9312-ec20-4b2a-a718-b88cc9c5a042.png", // Module 3 image (was on #1)
-    4: "/lovable-uploads/1df94af2-211c-4683-b744-0e1cab6e6ca8.png", // Module 4 image (was on #3)
+    3: "/lovable-uploads/59141ba1-7dcd-4147-8da9-6e01cb989e65.png", // Del 3 (woman with laptop)
+    4: "/lovable-uploads/db80bfcb-ab84-49d5-8916-6da4bf2fcd4d.png", // Del 4 (boy with laptop)
   };
 
   return images[sectionId as keyof typeof images] || null;
@@ -114,10 +114,8 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   description,
   moments,
 }) => {
-  // Show moments by default when section is loaded
   const [openMoment, setOpenMoment] = useState<number | null>(null);
-  const [momentsVisible, setMomentsVisible] = useState(true);
-
+  
   const toggleMoment = (momentId: number) => {
     setOpenMoment(openMoment === momentId ? null : momentId);
   };
@@ -128,39 +126,34 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   return (
     <div className="animate-fade">
       <div 
-        className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden cursor-pointer hover:shadow-md transition-shadow relative`}
+        className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden hover:shadow-md transition-shadow relative`}
       >
-        <div 
-          className="p-6"
-          onClick={() => setMomentsVisible(!momentsVisible)}
-        >
-          <div className="flex items-start">
-            <div className="flex-grow">
-              <h1 className={`text-3xl font-bold ${colorTheme.primary}`}>{title}</h1>
-              <div className="mt-4 text-gray-600">
-                {description}
-              </div>
-            </div>
+        <div className="p-6 relative">
+          {/* Position image at top right */}
+          {moduleImage && (
             <div 
-              className={`ml-4 w-1/4 flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}
-              onClick={(e) => e.stopPropagation()} // Prevent image clicks from toggling the module
+              className={`absolute top-6 right-6 w-1/4 flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}
             >
-              {moduleImage ? (
-                <img src={moduleImage} alt={`Modul ${sectionId}`} className="w-full h-auto object-cover" />
-              ) : (
-                <div className={`w-full h-32 ${colorTheme.bg} flex items-center justify-center`}>
-                  <span className={`text-2xl font-bold ${colorTheme.primary}`}>#{sectionId}</span>
-                </div>
-              )}
+              <img 
+                src={moduleImage} 
+                alt={`Modul ${sectionId}`} 
+                className="w-full h-auto object-cover" 
+              />
+            </div>
+          )}
+          
+          {/* Content with padding for image */}
+          <div className="pr-[28%]">
+            <h1 className={`text-3xl font-bold ${colorTheme.primary}`}>{title}</h1>
+            <div className="mt-4 text-gray-600">
+              {description}
             </div>
           </div>
         </div>
       </div>
 
-      <div className={cn(
-        "mt-8 space-y-4 transition-all duration-300",
-        momentsVisible ? "block" : "hidden"
-      )}>
+      {/* Moments section - always visible */}
+      <div className="mt-8 space-y-4 transition-all duration-300">
         <h2 className={`text-xl font-semibold ${colorTheme.secondary}`}>
           Moment i modul {sectionId}
         </h2>
@@ -171,10 +164,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({
             className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} transform transition-all duration-200 hover:shadow-md`}
           >
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleMoment(moment.id);
-              }}
+              onClick={() => toggleMoment(moment.id)}
               className={`w-full p-4 flex justify-between items-center text-left focus:outline-none ${colorTheme.hover}`}
             >
               <div className="flex items-center">
@@ -189,15 +179,9 @@ const CourseSection: React.FC<CourseSectionProps> = ({
                 <ChevronDown className={`h-5 w-5 ${colorTheme.light}`} />
               )}
             </button>
-            <div
-              className={cn(
-                "overflow-hidden transition-all duration-300",
-                openMoment === moment.id ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
-              )}
-            >
-              <div className={`p-4 border-t ${colorTheme.border}`}>
-                <MomentContent content={moment.content} />
-              </div>
+            {/* Content is always visible, no need for animation or toggle */}
+            <div className="p-4 border-t border-gray-100">
+              <MomentContent content={moment.content} />
             </div>
           </div>
         ))}
