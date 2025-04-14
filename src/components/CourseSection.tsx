@@ -1,8 +1,8 @@
-
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import MomentContent from "./MomentContent";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 interface MomentData {
   id: number;
@@ -160,35 +160,30 @@ const CourseSection: React.FC<CourseSectionProps> = ({
           Moment i modul {sectionId}
         </h2>
         
-        {moments.map((moment) => (
-          <div 
-            key={moment.id} 
-            className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} transform transition-all duration-200 hover:shadow-md`}
-          >
-            <button
-              onClick={() => toggleMoment(moment.id)}
-              className={`w-full p-4 flex justify-between items-center text-left focus:outline-none ${colorTheme.hover}`}
+        {/* Using Accordion component for better accessibility */}
+        <Accordion type="single" collapsible className="w-full">
+          {moments.map((moment) => (
+            <AccordionItem 
+              key={moment.id} 
+              value={`moment-${moment.id}`}
+              className={`mb-4 bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden`}
             >
-              <div className="flex items-center">
-                <div className={`flex-shrink-0 h-8 w-8 mr-3 ${colorTheme.bg} ${colorTheme.primary} rounded-full flex items-center justify-center font-medium`}>
-                  {moment.id}
+              <AccordionTrigger 
+                className={`p-4 ${colorTheme.hover} font-medium`}
+              >
+                <div className="flex items-center text-left">
+                  <div className={`flex-shrink-0 h-8 w-8 mr-3 ${colorTheme.bg} ${colorTheme.primary} rounded-full flex items-center justify-center font-medium`}>
+                    {moment.id}
+                  </div>
+                  <h3 className={`text-lg font-medium ${colorTheme.primary}`}>{moment.title}</h3>
                 </div>
-                <h3 className={`text-lg font-medium ${colorTheme.primary}`}>{moment.title}</h3>
-              </div>
-              {openMoment === moment.id ? (
-                <ChevronUp className={`h-5 w-5 ${colorTheme.light}`} />
-              ) : (
-                <ChevronDown className={`h-5 w-5 ${colorTheme.light}`} />
-              )}
-            </button>
-            {/* Content is only visible when the moment is opened */}
-            {openMoment === moment.id && (
-              <div className="p-4 border-t border-gray-100">
+              </AccordionTrigger>
+              <AccordionContent className="p-4 border-t border-gray-100">
                 <MomentContent content={moment.content} />
-              </div>
-            )}
-          </div>
-        ))}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </div>
   );
