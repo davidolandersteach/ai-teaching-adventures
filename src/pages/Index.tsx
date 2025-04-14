@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, GraduationCap, Users } from "lucide-react";
@@ -90,14 +89,16 @@ const HeroSection = () => (
           </Link>
         </div>
       </div>
-      {/* Image Container */}
-      <div className="md:w-1/2 mt-6 md:mt-0 flex items-center justify-center">
-        <img
-          src="/Minecraft 1.png"
-          alt="Illustration of AI in education"
-          className="w-full h-auto max-h-64 rounded-lg object-contain"
-          loading="lazy"
-        />
+      {/* Image Container with proper aspect ratio and fitting */}
+      <div className="md:w-1/2 mt-6 md:mt-0">
+        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden bg-white/10">
+          <img
+            src="/Minecraft 1.png"
+            alt="Illustration of AI in education"
+            className="w-full h-full object-contain"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   </header>

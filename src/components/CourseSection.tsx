@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -100,10 +99,10 @@ const getSectionColorTheme = (sectionId: number) => {
 // Module image mapping with correct assignments based on user's instructions
 const getModuleImage = (sectionId: number) => {
   const images = {
-    1: "/lovable-uploads/796c8632-5a2e-4bc0-bb56-0cbe324f94aa.png", // Del 1 igen (orange robot+brain on screen)
-    2: "/lovable-uploads/99a70897-68c4-4af1-8876-0bb4044025b0.png", // Module 2 image (stays the same)
-    3: "/lovable-uploads/59141ba1-7dcd-4147-8da9-6e01cb989e65.png", // Del 3 (woman with laptop)
-    4: "/lovable-uploads/db80bfcb-ab84-49d5-8916-6da4bf2fcd4d.png", // Del 4 (boy with laptop)
+    1: "/lovable-uploads/796c8632-5a2e-4bc0-bb56-0cbe324f94aa.png",
+    2: "/lovable-uploads/99a70897-68c4-4af1-8876-0bb4044025b0.png",
+    3: "/lovable-uploads/59141ba1-7dcd-4147-8da9-6e01cb989e65.png",
+    4: "/lovable-uploads/db80bfcb-ab84-49d5-8916-6da4bf2fcd4d.png",
   };
 
   return images[sectionId as keyof typeof images] || null;
@@ -130,16 +129,16 @@ const CourseSection: React.FC<CourseSectionProps> = ({
         className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden hover:shadow-md transition-shadow relative`}
       >
         <div className="p-6 relative">
-          {/* Position image at top right with improved positioning and sizing */}
+          {/* Position image at top right with proper fitting */}
           {moduleImage && (
             <div 
               className={`absolute top-4 right-4 w-1/4 max-w-[200px] flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}
-              style={{ maxHeight: '160px' }}
+              style={{ aspectRatio: '1/1' }}
             >
               <img 
                 src={moduleImage} 
                 alt={`Modul ${sectionId}`} 
-                className="w-full h-auto object-contain" 
+                className="w-full h-full object-contain bg-white"
               />
             </div>
           )}
