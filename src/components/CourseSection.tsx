@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -128,12 +129,20 @@ const CourseSection: React.FC<CourseSectionProps> = ({
       <div 
         className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden hover:shadow-md transition-shadow relative`}
       >
-        <div className="p-6 relative">
-          {/* Position image at top right with proper fitting */}
+        <div className="p-6 relative flex">
+          {/* Content with padding for image */}
+          <div className="flex-grow pr-6">
+            <h1 className={`text-3xl font-bold ${colorTheme.primary}`}>{title}</h1>
+            <div className="mt-4 text-gray-600">
+              {description}
+            </div>
+          </div>
+          
+          {/* Position image next to text with full height */}
           {moduleImage && (
             <div 
-              className={`absolute top-4 right-4 w-1/4 max-w-[200px] flex-shrink-0 rounded-md overflow-hidden border ${colorTheme.border}`}
-              style={{ aspectRatio: '1/1' }}
+              className={`flex-shrink-0 w-1/4 max-w-[200px] rounded-md overflow-hidden border ${colorTheme.border}`}
+              style={{ height: '100%' }}
             >
               <img 
                 src={moduleImage} 
@@ -142,14 +151,6 @@ const CourseSection: React.FC<CourseSectionProps> = ({
               />
             </div>
           )}
-          
-          {/* Content with padding for image */}
-          <div className="pr-[28%]">
-            <h1 className={`text-3xl font-bold ${colorTheme.primary}`}>{title}</h1>
-            <div className="mt-4 text-gray-600">
-              {description}
-            </div>
-          </div>
         </div>
       </div>
 
