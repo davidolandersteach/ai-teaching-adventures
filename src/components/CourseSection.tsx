@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import MomentContent from "./MomentContent";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 interface MomentData {
   id: number;
@@ -115,12 +115,6 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   description,
   moments,
 }) => {
-  const [openMoment, setOpenMoment] = useState<number | null>(null);
-  
-  const toggleMoment = (momentId: number) => {
-    setOpenMoment(openMoment === momentId ? null : momentId);
-  };
-
   const colorTheme = getSectionColorTheme(sectionId);
   const moduleImage = getModuleImage(sectionId);
 
@@ -160,16 +154,15 @@ const CourseSection: React.FC<CourseSectionProps> = ({
           Moment i modul {sectionId}
         </h2>
         
-        {/* Using Accordion component for better accessibility */}
-        <Accordion type="single" collapsible className="w-full">
+        {/* Using Collapsible instead of Accordion for more control */}
+        <div className="space-y-4">
           {moments.map((moment) => (
-            <AccordionItem 
+            <Collapsible 
               key={moment.id} 
-              value={`moment-${moment.id}`}
-              className={`mb-4 bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden`}
+              className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden`}
             >
-              <AccordionTrigger 
-                className={`p-4 ${colorTheme.hover} font-medium`}
+              <CollapsibleTrigger 
+                className={`w-full p-4 ${colorTheme.hover} font-medium flex items-center justify-between`}
               >
                 <div className="flex items-center text-left">
                   <div className={`flex-shrink-0 h-8 w-8 mr-3 ${colorTheme.bg} ${colorTheme.primary} rounded-full flex items-center justify-center font-medium`}>
@@ -177,13 +170,13 @@ const CourseSection: React.FC<CourseSectionProps> = ({
                   </div>
                   <h3 className={`text-lg font-medium ${colorTheme.primary}`}>{moment.title}</h3>
                 </div>
-              </AccordionTrigger>
-              <AccordionContent className="p-4 border-t border-gray-100">
+              </CollapsibleTrigger>
+              <CollapsibleContent className="p-4 border-t border-gray-100">
                 <MomentContent content={moment.content} />
-              </AccordionContent>
-            </AccordionItem>
+              </CollapsibleContent>
+            </Collapsible>
           ))}
-        </Accordion>
+        </div>
       </div>
     </div>
   );
