@@ -295,7 +295,7 @@ const sectionData = [
   {
     id: 4,
     title: "AI för elever - Lärande, skapande och stöd",
-    description: "Upptäck hur AI kan förändra bedömningsmetoder, göra dem mer effektiva, personliga och verkningsfulla.",
+    description: "Upptäck hur AI kan stödja elevers lärande, skapande och ge individualiserat stöd.",
     moments: [], // Will be populated dynamically
   },
   {

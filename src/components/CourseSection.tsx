@@ -1,7 +1,7 @@
-import React from "react";
+
+import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import MomentContent from "./MomentContent";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 interface MomentData {
@@ -115,6 +115,17 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   description,
   moments,
 }) => {
+  // Track open states for each moment
+  const [openMoments, setOpenMoments] = useState<{[key: number]: boolean}>({});
+
+  // Function to toggle moment open state
+  const toggleMoment = (momentId: number) => {
+    setOpenMoments(prev => ({
+      ...prev,
+      [momentId]: !prev[momentId]
+    }));
+  };
+
   const colorTheme = getSectionColorTheme(sectionId);
   const moduleImage = getModuleImage(sectionId);
 
@@ -154,12 +165,13 @@ const CourseSection: React.FC<CourseSectionProps> = ({
           Moment i modul {sectionId}
         </h2>
         
-        {/* Using Collapsible instead of Accordion for more control */}
         <div className="space-y-4">
           {moments.map((moment) => (
             <Collapsible 
               key={moment.id} 
               className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden`}
+              open={openMoments[moment.id] || false}
+              onOpenChange={() => toggleMoment(moment.id)}
             >
               <CollapsibleTrigger 
                 className={`w-full p-4 ${colorTheme.hover} font-medium flex items-center justify-between`}

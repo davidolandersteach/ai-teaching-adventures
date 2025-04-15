@@ -24,7 +24,7 @@ const sectionData = [
   { id: 1, title: "Introduktion till AI – Vad är AI och hur fungerar det?" },
   { id: 2, title: "AI och pedagogik – Teori, forskning och evidens" },
   { id: 3, title: "AI för lärare – Verktyg och strategier i praktiken" },
-  { id: 4, title: "Bedömning" },
+  { id: 4, title: "AI för elever - Lärande, skapande och stöd" },
   { id: 5, title: "Etik och ansvarsfull användning" },
   { id: 6, title: "Differentierat lärande" },
   { id: 7, title: "AI och källkritik" },
