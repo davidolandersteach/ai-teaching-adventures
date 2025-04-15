@@ -45,7 +45,7 @@ const createSectionMoments = (sectionId: number) => {
                 <li>
                   <strong>Se kort introduktionsvideo:</strong> "What is AI?"
                   <div className="mt-4">
-                    <EmbedYoutube videoId="dQw4w9WgXcQ" title="What is Artificial Intelligence Exactly?" />
+                    <EmbedYoutube videoId="cZOEt1LvR10" title="Vad är AI, eller artificiell intelligens? | Fredrik Heintz" />
                   </div>
                 </li>
                 <li>
@@ -219,66 +219,115 @@ const createSectionMoments = (sectionId: number) => {
       return [
         {
           id: 1,
-          title: "Pedagogiska teorier och AI",
+          title: "Moment A: Individuell förberedelse – Forskning, teori och ramverk (ca 75 minuter)",
           content: (
             <div>
+              <h3 className="text-xl font-medium mb-3">Syfte</h3>
               <p className="mb-4">
-                Hur relaterar AI till befintliga pedagogiska teorier och metoder? Vi utforskar kopplingen mellan AI och pedagogik.
+                Att individuellt inhämta kunskap om den pedagogiska forskningen kring AI, relevanta teoretiska 
+                perspektiv och nationella riktlinjer, som grund för den kollegiala diskussionen och planeringen.
               </p>
-              <h3 className="text-xl font-medium mb-2">Centrala teorier</h3>
-              <ul className="list-disc pl-5 mb-4">
-                <li>Konstruktivism</li>
-                <li>Sociokulturell teori</li>
-                <li>Konnektivism</li>
-                <li>Behaviorism</li>
-              </ul>
-              <EmbedYoutube videoId="dQw4w9WgXcQ" title="AI och pedagogiska teorier" />
+
+              <h4 className="text-lg font-medium mb-2">Genomförande</h4>
+              <div className="space-y-4">
+                <div>
+                  <h5 className="font-medium">Artikel: "AI inom bedömning väcker förhoppningar och farhågor"</h5>
+                  <p>
+                    Artikeln ger en konkret inblick i forskningsläget kring bedömning. Den balanserar potential med 
+                    tydliga risker och etiska dilemman.
+                  </p>
+                  <a href="https://www.skolverket.se/skolutveckling/forskning-och-utvarderingar/artiklar-om-forskning/ai-inom-bedomning-vacker-forhoppningar-och-farhagor" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline block mt-2">
+                    Läs artikeln på Skolverket
+                  </a>
+                </div>
+
+                <div>
+                  <h5 className="font-medium">Radioinslag: "Tack mamma, pappa och ChatGPT"</h5>
+                  <p>
+                    Detta radioinslag ger en konkret och aktuell bild av hur AI används av elever i praktiken 
+                    och vilka utmaningar detta skapar i skolan.
+                  </p>
+                  <a href="https://www.sverigesradio.se/avsnitt/tack-mamma-pappa-och-chatgpt-ai-i-praktiken-i-skolan-del-1" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline block mt-2">
+                    Lyssna på inslaget
+                  </a>
+                </div>
+              </div>
             </div>
           ),
         },
         {
           id: 2,
-          title: "Forskningsbaserad AI-användning",
+          title: "Moment B: Kollegial diskussion och evidensinformerad planering (ca 90 minuter)",
           content: (
             <div>
-              <h3 className="text-xl font-medium mb-3">Vad säger forskningen?</h3>
+              <h3 className="text-xl font-medium mb-3">Syfte</h3>
               <p className="mb-4">
-                Vi undersöker aktuell forskning om AI i utbildningssammanhang och vilken evidens som finns.
+                Att dela insikter om forskning och teori, diskutera hur dessa kan omsättas i praktiken, och 
+                gemensamt planera en evidensinformerad undervisningsaktivitet med AI.
               </p>
-              <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
-                <h4 className="font-medium mb-2">Forskningsstudie</h4>
-                <p>Genomgång av meta-studier om AI och lärande.</p>
+
+              <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 mb-4">
+                <h4 className="font-medium text-purple-800 mb-2">Agenda</h4>
+                <ol className="list-decimal pl-5 space-y-2">
+                  <li>Delningsrunda – Koppling forskning och praktik (ca 25 min)</li>
+                  <li>Från Modul 1 till Modul 2 – Beprövad erfarenhet (ca 15 min)</li>
+                  <li>Planering av Moment C – Evidensinformerad aktivitet (ca 40 min)</li>
+                  <li>Sammanfatta och fördela ansvar (ca 10 min)</li>
+                </ol>
               </div>
             </div>
           ),
         },
         {
           id: 3,
-          title: "Praktiska exempel",
+          title: "Moment C: Praktisk tillämpning – Genomförande av evidensinformerad aktivitet",
           content: (
             <div>
-              <h3 className="text-xl font-medium mb-3">AI i praktiken</h3>
-              <p className="mb-4">Flera skolor och lärare använder redan AI med goda resultat. Här är några exempel:</p>
-              <ol className="list-decimal pl-5 my-3">
-                <li>Carnegie Learning och Mika</li>
-                <li>DreamBox Learning</li>
-                <li>AI-stödda lärplattformar</li>
-              </ol>
+              <h3 className="text-xl font-medium mb-3">Syfte</h3>
+              <p className="mb-4">
+                Att genomföra den planerade, evidensinformerade AI-aktiviteten i den egna undervisningen och 
+                systematiskt samla erfarenheter och observationer.
+              </p>
+
+              <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                <h4 className="font-medium text-purple-800 mb-2">Att tänka på under genomförandet:</h4>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Tydliga instruktioner till eleverna</li>
+                  <li>Fokus på lärandeprocessen</li>
+                  <li>Systematisk observation/dokumentation</li>
+                  <li>Flexibilitet vid oväntade situationer</li>
+                </ul>
+              </div>
             </div>
           ),
         },
         {
           id: 4,
-          title: "Kritiska perspektiv",
+          title: "Moment D: Gemensam reflektion, analys och utvärdering (ca 75 minuter)",
           content: (
             <div>
-              <h3 className="text-xl font-medium mb-3">Kritisk granskning</h3>
+              <h3 className="text-xl font-medium mb-3">Syfte</h3>
               <p className="mb-4">
-                Det är viktigt att kritiskt granska både forskning och kommersiella påståenden om AI:s effekter i utbildningen.
+                Att kollegialt dela, analysera och kritiskt utvärdera erfarenheterna från Moment C. Utfallet 
+                jämförs med den ursprungliga hypotesen och forskningen.
               </p>
-              <div className="mt-4 bg-education-50 p-4 rounded-lg border border-education-100">
-                <h4 className="font-medium text-education-800 mb-2">Gruppdiskussion</h4>
-                <p>Diskutera styrkor och svagheter med befintlig forskning om AI i utbildning.</p>
+
+              <div className="space-y-4">
+                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                  <h4 className="font-medium text-purple-800 mb-2">Agenda</h4>
+                  <ol className="list-decimal pl-5 space-y-2">
+                    <li>Erfarenhetsutbyte – Vad hände? (ca 20 min)</li>
+                    <li>Analys – Jämförelse med hypotes och forskning (ca 30 min)</li>
+                    <li>Lärdomar och framåtblick (ca 20 min)</li>
+                    <li>Avslutning (ca 5 min)</li>
+                  </ol>
+                </div>
               </div>
             </div>
           ),
@@ -433,7 +482,11 @@ const sectionData = [
   {
     id: 2,
     title: "AI och pedagogik – Teori, forskning och evidens",
-    description: "Utforska pedagogiska teorier och forskningsresultat kring användningen av AI i undervisning och lärande.",
+    description: `Denna andra modul fördjupar förståelsen för hur AI kan integreras i undervisningen på ett pedagogiskt genomtänkt 
+    och evidensbaserat sätt. Vi utforskar aktuell forskning och teori om AI i lärandet, kopplar detta till skolans styrdokument och 
+    uppdrag, samt planerar, genomför och utvärderar en AI-stödd undervisningsaktivitet. Målet är att stärka deltagarnas förmåga att 
+    använda AI som ett verktyg för att främja elevernas lärande och måluppfyllelse, i linje med kravet på vetenskaplig grund och 
+    beprövad erfarenhet.`,
     moments: [], // Will be populated dynamically
   },
   {

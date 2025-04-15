@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import MomentContent from "./MomentContent";
@@ -115,8 +114,14 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   description,
   moments,
 }) => {
-  // Track open states for each moment
-  const [openMoments, setOpenMoments] = useState<{[key: number]: boolean}>({});
+  // Initialize all moments as closed
+  const [openMoments, setOpenMoments] = useState<{[key: number]: boolean}>(() => {
+    const initialState: {[key: number]: boolean} = {};
+    moments.forEach(moment => {
+      initialState[moment.id] = false;
+    });
+    return initialState;
+  });
 
   // Function to toggle moment open state
   const toggleMoment = (momentId: number) => {
