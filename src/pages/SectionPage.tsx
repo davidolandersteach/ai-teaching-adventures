@@ -43,7 +43,7 @@ const createSectionMoments = (sectionId: number) => {
                   </div>
                 </li>
                 <li>
-                  <strong>Se kort introduktionsvideo:</strong> "What is AI?"
+                  <strong>Se kort introduktionsvideo:</strong> "Vad är AI, eller artificiell intelligens?"
                   <div className="mt-4">
                     <EmbedYoutube videoId="cZOEt1LvR10" title="Vad är AI, eller artificiell intelligens? | Fredrik Heintz" />
                   </div>
@@ -229,34 +229,74 @@ const createSectionMoments = (sectionId: number) => {
               </p>
 
               <h4 className="text-lg font-medium mb-2">Genomförande</h4>
-              <div className="space-y-4">
-                <div>
-                  <h5 className="font-medium">Artikel: "AI inom bedömning väcker förhoppningar och farhågor"</h5>
-                  <p>
-                    Artikeln ger en konkret inblick i forskningsläget kring bedömning. Den balanserar potential med 
-                    tydliga risker och etiska dilemman.
+              <p className="mb-4">Varje deltagare tar del av följande material:</p>
+              
+              <div className="space-y-6 mb-6">
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">Artikel: "AI inom bedömning väcker förhoppningar och farhågor" (Skolverket)</h5>
+                  <p className="my-2">
+                    Artikeln ger en konkret inblick i forskningsläget kring ett specifikt och centralt pedagogiskt område: bedömning. 
+                    Den balanserar potential (t.ex. tidsbesparing, individanpassning, minskad bias) med tydliga risker och etiska dilemman 
+                    (rättvisa, tillförlitlighet, lärarens roll). Den refererar till studier och expertuttalanden.
                   </p>
                   <a href="https://www.skolverket.se/skolutveckling/forskning-och-utvarderingar/artiklar-om-forskning/ai-inom-bedomning-vacker-forhoppningar-och-farhagor" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline block mt-2">
+                    target="_blank" rel="noopener noreferrer" 
+                    className="text-purple-600 hover:underline block mt-2">
                     Läs artikeln på Skolverket
                   </a>
                 </div>
 
-                <div>
-                  <h5 className="font-medium">Radioinslag: "Tack mamma, pappa och ChatGPT"</h5>
-                  <p>
-                    Detta radioinslag ger en konkret och aktuell bild av hur AI används av elever i praktiken 
-                    och vilka utmaningar detta skapar i skolan.
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">Radioinslag: "Tack mamma, pappa och ChatGPT - AI i praktiken i skolan del 1" (Sveriges Radio)</h5>
+                  <p className="my-2">
+                    Detta radioinslag ger en konkret och aktuell bild av hur AI (särskilt ChatGPT) används av elever i praktiken och vilka 
+                    utmaningar och diskussioner detta skapar i skolan. Det lyfter fram perspektiv från både elever och lärare/skolledare och 
+                    berör frågor om fusk, lärande, bedömning och behovet av nya förhållningssätt.
                   </p>
                   <a href="https://www.sverigesradio.se/avsnitt/tack-mamma-pappa-och-chatgpt-ai-i-praktiken-i-skolan-del-1" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline block mt-2">
-                    Lyssna på inslaget
+                    target="_blank" rel="noopener noreferrer" 
+                    className="text-purple-600 hover:underline block mt-2">
+                    Lyssna på inslaget (ca 18 min)
                   </a>
                 </div>
+
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">Artikel: "Generativ AI - en del av digital kompetens" (Kjällander m.fl.)</h5>
+                  <p className="my-2">
+                    Denna artikel kopplar specifikt generativ AI till läroplanerna och begreppet digital kompetens, med ett tydligt 
+                    pedagogiskt och forskningsbaserat resonemang. Den ger argument för varför skolan behöver förhålla sig till AI.
+                  </p>
+                  <a href="https://preparus.se/article/generativ-ai-en-del-av-digital-kompetens/" 
+                    target="_blank" rel="noopener noreferrer" 
+                    className="text-purple-600 hover:underline block mt-2">
+                    Läs artikeln på Preparus
+                  </a>
+                </div>
+
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">Artikel: "Så använder lärare AI – tips och varningar" (Skolvärlden)</h5>
+                  <p className="my-2">
+                    Artikeln samlar konkreta exempel och råd från lärare och experter om hur AI kan användas i lärarvardagen 
+                    (planering, material, feedback) men lyfter också tydligt fram fallgropar och vikten av kritiskt tänkande 
+                    och etiska överväganden.
+                  </p>
+                  <a href="https://skolvarlden.se/artiklar/sa-anvander-larare-ai-tips-och-varningar" 
+                    target="_blank" rel="noopener noreferrer" 
+                    className="text-purple-600 hover:underline block mt-2">
+                    Läs artikeln på Skolvärlden
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 mt-6">
+                <h4 className="font-medium text-purple-800 mb-2">Reflektionsfrågor att ta med till Moment B:</h4>
+                <ul className="list-disc pl-5 space-y-2 text-purple-900">
+                  <li>Vilken potential för att förbättra lärandet i ditt ämne/din verksamhet ser du baserat på forskningen du läst?</li>
+                  <li>Vilken identifierad risk känner du är mest angelägen att hantera i din praktik?</li>
+                  <li>Hur kan vi säkerställa att användningen av AI i undervisningen vilar på vetenskaplig grund och beprövad erfarenhet?</li>
+                  <li>Vilken justering eller vidareutveckling av en AI-aktivitet skulle du vilja prova, motiverat utifrån forskning?</li>
+                  <li>Vilken fråga kring bedömning och AI tycker du är viktigast att diskutera i kollegiet just nu?</li>
+                </ul>
               </div>
             </div>
           ),
@@ -269,17 +309,53 @@ const createSectionMoments = (sectionId: number) => {
               <h3 className="text-xl font-medium mb-3">Syfte</h3>
               <p className="mb-4">
                 Att dela insikter om forskning och teori, diskutera hur dessa kan omsättas i praktiken, och 
-                gemensamt planera en evidensinformerad undervisningsaktivitet med AI.
+                gemensamt planera en evidensinformerad undervisningsaktivitet med AI som ska genomföras (Moment C).
               </p>
 
-              <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 mb-4">
-                <h4 className="font-medium text-purple-800 mb-2">Agenda</h4>
-                <ol className="list-decimal pl-5 space-y-2">
-                  <li>Delningsrunda – Koppling forskning och praktik (ca 25 min)</li>
-                  <li>Från Modul 1 till Modul 2 – Beprövad erfarenhet (ca 15 min)</li>
-                  <li>Planering av Moment C – Evidensinformerad aktivitet (ca 40 min)</li>
-                  <li>Sammanfatta och fördela ansvar (ca 10 min)</li>
-                </ol>
+              <h4 className="text-lg font-medium mb-2">Agenda</h4>
+              
+              <div className="space-y-6">
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">1. Delningsrunda – Koppling forskning och praktik (ca 25 min)</h5>
+                  <ul className="list-disc pl-5 mt-2">
+                    <li>Varje deltagare delar sin viktigaste insikt från Moment A</li>
+                    <li>Diskutera gemensamt: Vilka möjligheter och risker från forskningen känns mest relevanta för er skola/verksamhet?</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">2. Från Modul 1 till Modul 2 – Beprövad erfarenhet (ca 15 min)</h5>
+                  <ul className="list-disc pl-5 mt-2">
+                    <li>Reflektera kort över erfarenheterna från Modul 1:s aktivitet</li>
+                    <li>Hur kan vi använda dessa erfarenheter tillsammans med ny kunskap för en mer genomtänkt aktivitet?</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">3. Planering av Moment C – Evidensinformerad aktivitet (ca 40 min)</h5>
+                  <p className="mt-2 mb-3">Välj fokus och aktivitet från följande områden:</p>
+                  
+                  <div className="bg-white p-3 border border-purple-200 rounded-md mb-4">
+                    <h6 className="font-medium text-purple-700">Möjliga fokusområden:</h6>
+                    <ul className="list-disc pl-5 mt-1">
+                      <li>AI som stöd för skrivprocessen</li>
+                      <li>AI för differentiering</li>
+                      <li>AI för att stimulera kreativitet/problemlösning</li>
+                      <li>AI för att öva källkritik</li>
+                    </ul>
+                  </div>
+                  
+                  <ul className="list-disc pl-5 mt-2">
+                    <li>Formulera hypotes och lärandemål</li>
+                    <li>Konkretisera genomförandet</li>
+                    <li>Diskutera bedömningsaspekter</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">4. Sammanfatta och fördela ansvar (ca 10 min)</h5>
+                  <p className="mt-2">Säkerställ att alla vet vad som ska göras till nästa gång och vem som ansvarar för vad.</p>
+                </div>
               </div>
             </div>
           ),
@@ -292,16 +368,16 @@ const createSectionMoments = (sectionId: number) => {
               <h3 className="text-xl font-medium mb-3">Syfte</h3>
               <p className="mb-4">
                 Att genomföra den planerade, evidensinformerade AI-aktiviteten i den egna undervisningen och 
-                systematiskt samla erfarenheter och observationer.
+                systematiskt samla erfarenheter och observationer kopplade till den formulerade hypotesen och lärandemålen.
               </p>
 
               <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
                 <h4 className="font-medium text-purple-800 mb-2">Att tänka på under genomförandet:</h4>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Tydliga instruktioner till eleverna</li>
-                  <li>Fokus på lärandeprocessen</li>
-                  <li>Systematisk observation/dokumentation</li>
-                  <li>Flexibilitet vid oväntade situationer</li>
+                <ul className="list-disc pl-5 space-y-2 text-purple-900">
+                  <li><strong>Tydliga instruktioner:</strong> Förklara syftet för eleverna och ramarna för AI-användningen</li>
+                  <li><strong>Fokus på lärandeprocessen:</strong> Observera hur eleverna interagerar med AI-verktyget</li>
+                  <li><strong>Systematisk observation:</strong> Samla in underlag relaterat till er hypotes</li>
+                  <li><strong>Flexibilitet:</strong> Var beredd på att justera planen vid oväntade situationer</li>
                 </ul>
               </div>
             </div>
@@ -315,19 +391,50 @@ const createSectionMoments = (sectionId: number) => {
               <h3 className="text-xl font-medium mb-3">Syfte</h3>
               <p className="mb-4">
                 Att kollegialt dela, analysera och kritiskt utvärdera erfarenheterna från Moment C. Utfallet 
-                jämförs med den ursprungliga hypotesen och forskningen.
+                jämförs med den ursprungliga hypotesen och den forskning/teori som låg till grund för planeringen.
               </p>
 
-              <div className="space-y-4">
-                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                  <h4 className="font-medium text-purple-800 mb-2">Agenda</h4>
-                  <ol className="list-decimal pl-5 space-y-2">
-                    <li>Erfarenhetsutbyte – Vad hände? (ca 20 min)</li>
-                    <li>Analys – Jämförelse med hypotes och forskning (ca 30 min)</li>
-                    <li>Lärdomar och framåtblick (ca 20 min)</li>
-                    <li>Avslutning (ca 5 min)</li>
-                  </ol>
+              <h4 className="text-lg font-medium mb-2">Agenda</h4>
+              
+              <div className="space-y-6">
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">1. Erfarenhetsutbyte – Vad hände? (ca 20 min)</h5>
+                  <p className="mt-2">Varje deltagare beskriver genomförd aktivitet med fokus på både framgångar och utmaningar.</p>
                 </div>
+
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">2. Analys – Jämförelse med hypotes och forskning (ca 30 min)</h5>
+                  <ul className="list-disc pl-5 mt-2">
+                    <li>Hur väl stämde utfallet med er hypotes?</li>
+                    <li>Hur påverkades elevernas lärande och engagemang?</li>
+                    <li>Vilka etiska eller praktiska utmaningar stötte ni på?</li>
+                    <li>Hur fungerade kopplingen till bedömning?</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">3. Lärdomar och framåtblick (ca 20 min)</h5>
+                  <ul className="list-disc pl-5 mt-2">
+                    <li>Viktigaste lärdomarna från denna cykel</li>
+                    <li>Vad behöver justeras eller förbättras?</li>
+                    <li>Behov av fortsatt lärande?</li>
+                    <li>Hur tar vi detta vidare?</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-medium">4. Avslutning (ca 5 min)</h5>
+                  <p className="mt-2">Sammanfatta kort de centrala slutsatserna och beslutade nästa steg.</p>
+                </div>
+              </div>
+              
+              <div className="mt-8 bg-purple-50 p-4 rounded-lg border border-purple-200">
+                <h4 className="font-medium text-purple-800 mb-2">Valbar fördjupning:</h4>
+                <ul className="list-disc pl-5 space-y-2 text-purple-900">
+                  <li>Utforska ett specifikt AI-verktyg som nämnts i forskningen</li>
+                  <li>Läs en djupare forskningsartikel inom ditt ämnesområde</li>
+                  <li>Delta i externt webbinarium/nätverk om AI i utbildning</li>
+                </ul>
               </div>
             </div>
           ),
@@ -486,7 +593,19 @@ const sectionData = [
     och evidensbaserat sätt. Vi utforskar aktuell forskning och teori om AI i lärandet, kopplar detta till skolans styrdokument och 
     uppdrag, samt planerar, genomför och utvärderar en AI-stödd undervisningsaktivitet. Målet är att stärka deltagarnas förmåga att 
     använda AI som ett verktyg för att främja elevernas lärande och måluppfyllelse, i linje med kravet på vetenskaplig grund och 
-    beprövad erfarenhet.`,
+    beprövad erfarenhet.
+    
+    Vetenskaplig och pedagogisk förankring: Modulen bygger på Skolverkets råd, relevant pedagogisk forskning om AI i utbildning 
+    (t.ex. översikter om effekter, möjligheter och risker), samt principer för evidensbaserad praktik och didaktisk design. 
+    Upplägget betonar kopplingen mellan teori, praktik och systematisk reflektion.
+    
+    Lärandemål:
+    - Relatera AI-användning till forskning och teori: Sammanfatta huvudsakliga forskningsrön om AI:s potential och utmaningar 
+      i undervisning samt relatera dessa till pedagogiska teorier.
+    - Koppla AI-pedagogik till styrdokument: Argumentera för hur specifik AI-användning kan stödja målen i läroplanerna.
+    - Planera evidensinformerad AI-aktivitet: Utforma en konkret undervisningsaktivitet där AI används med ett tydligt didaktiskt syfte.
+    - Analysera genomförd AI-aktivitet: Kritiskt utvärdera en genomförd AI-stödd aktivitet utifrån observerade effekter.
+    - Tillämpa etiska och kritiska perspektiv: Identifiera och hantera etiska dilemman och praktiska utmaningar vid användning av AI.`,
     moments: [], // Will be populated dynamically
   },
   {

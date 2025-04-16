@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import MomentContent from "./MomentContent";
@@ -114,11 +115,12 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   description,
   moments,
 }) => {
-  // Initialize all moments as closed
+  // Initialize first moment as open by default, all others closed
   const [openMoments, setOpenMoments] = useState<{[key: number]: boolean}>(() => {
     const initialState: {[key: number]: boolean} = {};
-    moments.forEach(moment => {
-      initialState[moment.id] = false;
+    moments.forEach((moment, index) => {
+      // Open the first moment by default
+      initialState[moment.id] = index === 0; 
     });
     return initialState;
   });
@@ -171,7 +173,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({
         </h2>
         
         <div className="space-y-4">
-          {moments.map((moment) => (
+          {moments.map((moment, index) => (
             <Collapsible 
               key={moment.id} 
               className={`bg-white rounded-lg shadow-sm border ${colorTheme.border} overflow-hidden`}
