@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import MomentContent from "./MomentContent";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -120,10 +120,20 @@ const CourseSection: React.FC<CourseSectionProps> = ({
     const initialState: {[key: number]: boolean} = {};
     moments.forEach((moment) => {
       // Open all moments by default
-      initialState[moment.id] = true; 
+      initialState[moment.id] = true;
     });
     return initialState;
   });
+
+  // Force rerender when component mounts to ensure moments are visible
+  useEffect(() => {
+    // Set a small timeout to ensure the DOM has updated
+    const timer = setTimeout(() => {
+      setOpenMoments((prev) => ({...prev}));
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   // Function to toggle moment open state
   const toggleMoment = (momentId: number) => {
