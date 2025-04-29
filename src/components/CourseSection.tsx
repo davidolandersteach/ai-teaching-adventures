@@ -115,12 +115,12 @@ const CourseSection: React.FC<CourseSectionProps> = ({
   description,
   moments,
 }) => {
-  // Initialize first moment as open by default, all others closed
+  // Initialize all moments as open by default
   const [openMoments, setOpenMoments] = useState<{[key: number]: boolean}>(() => {
     const initialState: {[key: number]: boolean} = {};
-    moments.forEach((moment, index) => {
-      // Open the first moment by default
-      initialState[moment.id] = index === 0; 
+    moments.forEach((moment) => {
+      // Open all moments by default
+      initialState[moment.id] = true; 
     });
     return initialState;
   });
