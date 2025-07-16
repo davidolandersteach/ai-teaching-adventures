@@ -38,27 +38,27 @@ const Sidebar = () => {
   return (
     <div
       className={cn(
-        "h-screen bg-sidebar sticky top-0 border-r border-gray-200 transition-all duration-300 overflow-y-auto",
+        "h-screen bg-sidebar sticky top-0 border-r border-sidebar-border transition-all duration-300 overflow-y-auto shadow-sm",
         collapsed ? "w-16" : "w-64"
       )}
     >
-      <div className="flex items-center justify-between p-4 border-b border-gray-200">
-        <Link to="/" className="flex items-center space-x-2">
+      <div className="flex items-center justify-between p-4 border-b border-sidebar-border">
+        <Link to="/" className="flex items-center space-x-2 group">
           {!collapsed && (
-            <span className="text-xl font-bold text-education-700">
+            <span className="text-xl font-bold text-primary group-hover:text-accent transition-colors">
               AI för lärare
             </span>
           )}
-          {collapsed && <GraduationCap className="h-6 w-6 text-education-700" />}
+          {collapsed && <GraduationCap className="h-6 w-6 text-primary" />}
         </Link>
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="p-1 rounded-md hover:bg-gray-200 transition-colors"
+          className="p-2 rounded-lg hover:bg-sidebar-accent transition-colors"
         >
           {collapsed ? (
-            <BookOpen className="h-5 w-5" />
+            <BookOpen className="h-5 w-5 text-sidebar-foreground" />
           ) : (
-            <BookText className="h-5 w-5" />
+            <BookText className="h-5 w-5 text-sidebar-foreground" />
           )}
         </button>
       </div>
@@ -77,11 +77,11 @@ const Sidebar = () => {
 
         <div className="pt-2 pb-1">
           {!collapsed && (
-            <div className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            <div className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               Kursmoduler
             </div>
           )}
-          {collapsed && <hr className="border-gray-200" />}
+          {collapsed && <hr className="border-sidebar-border" />}
         </div>
 
         {sectionData.map((section) => {

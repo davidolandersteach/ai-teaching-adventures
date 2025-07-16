@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, GraduationCap, Users } from "lucide-react";
+import WelcomeToast from "@/components/WelcomeToast";
 
 // Define color themes for each section
 const getSectionColorTheme = (sectionId: number) => {
@@ -72,32 +73,46 @@ const sectionData = [
 
 // HeroSection Component
 const HeroSection = () => (
-  <header className="bg-gradient-to-br from-education-700 to-education-900 text-white rounded-xl shadow-lg p-8 mb-8">
-    <div className="max-w-3xl mx-auto md:flex md:items-center md:space-x-8">
-      {/* Text Container */}
-      <div className="md:w-1/2">
-        <h1 className="text-4xl font-bold mb-4">AI i utbildning</h1>
-        <p className="text-xl opacity-90 mb-6">
-          Lär dig hur artificiell intelligens förändrar utbildningslandskapet och hur du och dina elever kan använda AI på ett säkert sätt för att öka måluppfyllelsen.
-        </p>
-        <div className="flex gap-4 items-center">
-          <Link
-            to="/section/1"
-            className="bg-white text-education-800 hover:bg-gray-100 px-4 py-2 rounded-md font-medium inline-flex items-center gap-2 transition-colors"
-          >
-            Påbörja lärandet <ArrowRight className="h-4 w-4" />
-          </Link>
+  <header className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-accent text-primary-foreground rounded-2xl shadow-elevation p-8 mb-8">
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-accent/90"></div>
+    <div className="relative max-w-4xl mx-auto">
+      <div className="md:flex md:items-center md:space-x-12">
+        {/* Text Container */}
+        <div className="md:w-2/3">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+            <GraduationCap className="h-5 w-5" />
+            <span className="text-sm font-medium">Professionell utveckling för lärare</span>
+          </div>
+          <h1 className="text-5xl font-bold mb-6 leading-tight">
+            AI i utbildning
+          </h1>
+          <p className="text-xl opacity-95 mb-8 leading-relaxed">
+            Lär dig hur artificiell intelligens förändrar utbildningslandskapet och hur du och dina elever kan använda AI på ett säkert sätt för att öka måluppfyllelsen.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 items-start">
+            <Link
+              to="/section/1"
+              className="bg-white text-primary hover:bg-white/90 px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2 transition-all duration-200 hover:shadow-lg hover:scale-105"
+            >
+              Påbörja lärandet <ArrowRight className="h-5 w-5" />
+            </Link>
+            <div className="text-sm opacity-80">
+              ✓ 8 moduler • ✓ 32 moment • ✓ Vetenskapligt grundat
+            </div>
+          </div>
         </div>
-      </div>
-      {/* Image Container with proper aspect ratio and fitting */}
-      <div className="md:w-1/2 mt-6 md:mt-0">
-        <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden bg-white/10">
-          <img
-            src="/Minecraft 1.png"
-            alt="Illustration of AI in education"
-            className="w-full h-full object-contain"
-            loading="lazy"
-          />
+        {/* Image Container */}
+        <div className="md:w-1/3 mt-8 md:mt-0">
+          <div className="relative">
+            <div className="aspect-square rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm p-4">
+              <img
+                src="/Minecraft 1.png"
+                alt="Illustration of AI in education"
+                className="w-full h-full object-contain filter drop-shadow-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -106,30 +121,38 @@ const HeroSection = () => (
 
 // OverviewSection Component
 const OverviewSection = () => (
-  <section className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
-    <h2 className="text-2xl font-bold text-gray-800 mb-4">Översikt</h2>
-    <p className="text-gray-600 mb-4">
-      Denna kurs om AI i utbildning är utformad för att ge dig kunskaper och praktiska färdigheter för att integrera AI-verktyg och metoder i din undervisning.
-    </p>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-      <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-        <GraduationCap className="h-8 w-8 text-education-600 mb-3" />
-        <h3 className="text-lg font-semibold mb-2">För pedagoger</h3>
-        <p className="text-gray-600">
+  <section className="welcome-card mb-8">
+    <div className="text-center mb-8">
+      <h2 className="text-3xl font-bold text-foreground mb-4">Vad du kommer att lära dig</h2>
+      <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+        Denna kurs om AI i utbildning är utformad för att ge dig kunskaper och praktiska färdigheter för att integrera AI-verktyg och metoder i din undervisning.
+      </p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+      <div className="welcome-card border-l-4 border-l-primary">
+        <div className="progress-ring w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+          <GraduationCap className="h-8 w-8 text-white" />
+        </div>
+        <h3 className="text-xl font-semibold mb-3 text-center">För pedagoger</h3>
+        <p className="text-muted-foreground text-center">
           Vetenskapligt grundad fortbildningsdesign anpassad för pedagoger utan krav på teknisk bakgrund.
         </p>
       </div>
-      <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-        <BookOpen className="h-8 w-8 text-education-600 mb-3" />
-        <h3 className="text-lg font-semibold mb-2">Strukturerat lärande</h3>
-        <p className="text-gray-600">
+      <div className="welcome-card border-l-4 border-l-accent">
+        <div className="progress-ring w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+          <BookOpen className="h-8 w-8 text-white" />
+        </div>
+        <h3 className="text-xl font-semibold mb-3 text-center">Strukturerat lärande</h3>
+        <p className="text-muted-foreground text-center">
           32 moment organiserade i åtta delar för logisk inlärning. Delarna bygger på varandra, men kan också användas separat.
         </p>
       </div>
-      <div className="bg-gray-50 p-5 rounded-lg border border-gray-100">
-        <Users className="h-8 w-8 text-education-600 mb-3" />
-        <h3 className="text-lg font-semibold mb-2">Kollegialt samarbete</h3>
-        <p className="text-gray-600">
+      <div className="welcome-card border-l-4 border-l-primary">
+        <div className="progress-ring w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+          <Users className="h-8 w-8 text-white" />
+        </div>
+        <h3 className="text-xl font-semibold mb-3 text-center">Kollegialt samarbete</h3>
+        <p className="text-muted-foreground text-center">
           Reflektera tillsammans med kollegor för att nå djupare insikter.
         </p>
       </div>
@@ -140,8 +163,13 @@ const OverviewSection = () => (
 // CourseSections Component
 const CourseSections = () => (
   <section>
-    <h2 className="text-2xl font-bold text-gray-800 mb-4">Kursens delar</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="text-center mb-8">
+      <h2 className="text-3xl font-bold text-foreground mb-4">Kursens delar</h2>
+      <p className="text-lg text-muted-foreground">
+        Välj en modul nedan för att börja ditt lärande. Varje modul innehåller flera interaktiva moment.
+      </p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {sectionData.map((section) => {
         const colorTheme = getSectionColorTheme(section.id);
         
@@ -149,19 +177,26 @@ const CourseSections = () => (
           <Link
             key={section.id}
             to={`/section/${section.id}`}
-            className={`bg-white rounded-lg border ${colorTheme.border} p-4 hover:shadow-md transition-shadow group ${colorTheme.hover}`}
+            className="welcome-card group cursor-pointer"
           >
             <div className="flex flex-col h-full">
-              <div className="flex items-center mb-3">
-                <div className={`flex-shrink-0 h-8 w-8 ${colorTheme.bg} ${colorTheme.text} rounded-full flex items-center justify-center font-medium`}>
+              <div className="flex items-center justify-between mb-4">
+                <div className={`progress-ring w-12 h-12 flex items-center justify-center text-white font-bold text-lg`}>
                   {section.id}
                 </div>
+                <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
               </div>
-              <h3 className={`text-lg font-medium ${colorTheme.text} group-hover:font-semibold transition-all`}>
+              <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
                 {section.title}
               </h3>
-              <div className="mt-auto pt-4 flex justify-end">
-                <ArrowRight className={`h-5 w-5 ${colorTheme.text} group-hover:translate-x-1 transition-transform`} />
+              <div className="mt-auto">
+                <div className="w-full bg-muted rounded-full h-2">
+                  <div 
+                    className="bg-gradient-to-r from-primary to-accent h-2 rounded-full transition-all duration-300"
+                    style={{ width: `${Math.random() * 100}%` }}
+                  ></div>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">4 moment</p>
               </div>
             </div>
           </Link>
@@ -175,6 +210,7 @@ const CourseSections = () => (
 const Index = () => {
   return (
     <main className="animate-fade">
+      <WelcomeToast />
       <HeroSection />
       <OverviewSection />
       <CourseSections />
